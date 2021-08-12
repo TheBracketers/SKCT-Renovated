@@ -3,8 +3,9 @@
 This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna College of Technology](http://www.skct.edu.in/) webpage
 
 - [**SKCT-Renovated**](#skct-renovated)
-  - [**Stacks & Frameworks**](#stacks--frameworks)
-  - [**Languages**](#languages)
+    - [**Dependencies & Frameworks**](#dependencies--frameworks)
+    - [**Languages**](#languages)
+    - [**Work in Progress 👷‍♂️**](#work-in-progress-️)
 
 ### **Dependencies & Frameworks**
 
@@ -17,3 +18,4 @@ This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna Coll
 
 - [**Typescript**](https://www.typescriptlang.org/)
 
+### **Work in Progress 👷‍♂️**
