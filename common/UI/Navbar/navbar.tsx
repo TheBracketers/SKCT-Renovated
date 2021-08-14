@@ -6,10 +6,10 @@ import { Logo } from '../../icons/';
 import {
   PrimaryAnchorWrapperClasses,
   PrimaryAnchorClasses,
-} from '../../Styles/AnchorClasses';
+} from '../../Styles';
 import NavbarHoverArea from './NavbarHoverArea';
-import DropdownItem from './DropdownItem';
-import DropDownColumn from './DropDownColumn';
+
+import About from './Dropdowns/About';
 function Navbar() {
   const [showLinkLists, setShowLinkLists] = useState(false);
 
@@ -70,36 +70,7 @@ function Navbar() {
                   <a className={PrimaryAnchorClasses}>About</a>
                 </Link>
                 <NavbarHoverArea>
-                  <div className="flex flex-wrap -mx-6 overflow-hidden">
-                    <DropDownColumn>
-                      <DropdownItem href="">Vision Mission</DropdownItem>
-                      <DropdownItem href="">Management</DropdownItem>
-                      <DropdownItem href="">
-                        Governing Body members
-                      </DropdownItem>
-                      <DropdownItem href="">
-                        Approvals Ranking and Accreditation
-                      </DropdownItem>
-                      <DropdownItem href="">Eminent Visitors</DropdownItem>
-                      <DropdownItem href="">Media</DropdownItem>
-                      <DropdownItem href="">Daily</DropdownItem>
-                    </DropDownColumn>
-
-                    <DropDownColumn className="hover:text-red-500">
-                      <img
-                        src="https://source.unsplash.com/random"
-                        className="w-full"
-                      />
-                    </DropDownColumn>
-
-                    <DropDownColumn>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Et exercitationem, doloremque odit vero, soluta excepturi
-                      omnis tenetur cupiditate porro corporis alias ab
-                      laboriosam magni aliquid cumque blanditiis itaque eos
-                      accusamus.
-                    </DropDownColumn>
-                  </div>
+                  <About />
                 </NavbarHoverArea>
               </div>
               <div className={PrimaryAnchorWrapperClasses}>

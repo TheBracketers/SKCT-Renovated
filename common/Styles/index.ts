@@ -1,4 +1,1 @@
-export {
-  PrimaryAnchorClasses,
-  PrimaryAnchorWrapperClasses,
-} from './AnchorClasses';
+export { PrimaryAnchorClasses, PrimaryAnchorWrapperClasses } from './navbar';

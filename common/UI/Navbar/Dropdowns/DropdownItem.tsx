@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import {
   DropdownClasses,
   DropdownWrapperClasses,
-} from '../../Styles/AnchorClasses';
+} from '../../../Styles/navbar';
 
 const DropdownItem: FC<{ href: string }> = ({ children, href }) => {
   return (
