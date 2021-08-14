@@ -2,20 +2,17 @@ import React from 'react';
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Logo } from '../icons';
-
+import { Logo } from '../../icons/';
+import {
+  PrimaryAnchorWrapperClasses,
+  PrimaryAnchorClasses,
+} from '../../Styles/AnchorClasses';
 function Navbar() {
   const [showLinkLists, setShowLinkLists] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+
   const onSearch = (e) => {};
   const onExtend = () => {
     setShowLinkLists((prev) => !prev);
-  };
-  const onMouseEntered = () => {
-    setIsHovered(true);
-  };
-  const onMouseLeave = () => {
-    setIsHovered(false);
   };
 
   return (
@@ -65,46 +62,77 @@ function Navbar() {
               </a>
             </nav>
             <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
-              <div className="group py-7 ">
+              <div className={PrimaryAnchorWrapperClasses}>
                 <Link href="/about">
-                  <a
-                    className="group-hover:text-blue-500 transition duration-300"
-                    onMouseOver={onMouseEntered}>
-                    About
-                  </a>
+                  <a className={PrimaryAnchorClasses}>About</a>
                 </Link>
                 <div className="group-hover:flex hidden absolute  left-0  w-full ">
-                  <div className=" text-white block w-full bg-black mt-9 px-16 py-4">
-                    <a className="hover:text-blue-500 transition duration-300"></a>
+                  asd
+                  <div className=" flex flex-col text-white  w-full bg-black mt-9 px-16 py-4">
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Vision Mission</a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Management</a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>
+                        Governing Body members
+                      </a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>
+                        Approvals Ranking and Accreditation
+                      </a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Eminent Visitors</a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Media</a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Daily News</a>
+                    </Link>
+
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Eminent Visitors</a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Media</a>
+                    </Link>
+                    <Link href="">
+                      <a className={PrimaryAnchorClasses}>Daily News</a>
+                    </Link>
                   </div>
                 </div>
               </div>
 
-              <Link href="/academics">
-                <a className="hover:text-blue-500 transition duration-300 py-7  ">
-                  Academics
-                </a>
-              </Link>
-              <Link href="/R&D">
-                <a className="hover:text-blue-500 transition duration-300 py-7  ">
-                  Research & Work
-                </a>
-              </Link>
-              <Link href="/campus-life">
-                <a className="hover:text-blue-500 transition duration-300 py-7  ">
-                  Campus Life
-                </a>
-              </Link>
-              <Link href="/outcomes">
-                <a className="hover:text-blue-500 transition duration-300 py-7  ">
-                  Outcomes
-                </a>
-              </Link>
-              <Link href="/admissions">
-                <a className="hover:text-blue-500 transition duration-300 py-7  ">
-                  Admission
-                </a>
-              </Link>
+              <div className={PrimaryAnchorWrapperClasses}>
+                <Link href="/academics">
+                  <a className={PrimaryAnchorClasses}>Academics</a>
+                </Link>
+              </div>
+              <div className={PrimaryAnchorWrapperClasses}>
+                <Link href="/R&D">
+                  <a className={PrimaryAnchorClasses}>Research & Work</a>
+                </Link>
+              </div>
+              <div className={PrimaryAnchorWrapperClasses}>
+                <Link href="/campus-life">
+                  <a className={PrimaryAnchorClasses}>Campus Life</a>
+                </Link>
+              </div>
+              <div className={PrimaryAnchorWrapperClasses}>
+                <Link href="/outcomes">
+                  <a className={PrimaryAnchorClasses}>Outcomes</a>
+                </Link>
+              </div>
+              <div className={PrimaryAnchorWrapperClasses}>
+                <Link href="/admissions">
+                  <a className={PrimaryAnchorClasses}>Admission</a>
+                </Link>
+              </div>
               <button onClick={onSearch} className="py-7">
                 ICON
               </button>
@@ -119,10 +147,6 @@ function Navbar() {
       {showLinkLists && (
         <div className="absolute z-10 lg:hidden bg-black text-white ">
           {/* Todo:  Jayvan - Create a component that lists all the links*/}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, beatae
-          sapiente tempore voluptates voluptatem necessitatibus voluptate,
-          dolore, quas est voluptatibus quisquam aliquam harum? Saepe est
-          ducimus enim voluptatum vero animi.
         </div>
       )}
       {/* {isHovered && (
