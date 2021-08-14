@@ -1,11 +1,11 @@
-const PrimaryAnchorWrapperClasses = 'group py-7';
+const PrimaryAnchorWrapperClasses = 'group pt-7';
 
 const PrimaryAnchorClasses =
   'group-hover:text-blue-500 transition duration-300';
 
-const DropdownWrapperClasses = 'group';
+const DropdownWrapperClasses = 'mb-6';
 
-const DropdownClasses = PrimaryAnchorClasses;
+const DropdownClasses = 'hover:text-blue-500 transition duration-300';
 
 export {
   PrimaryAnchorClasses,
