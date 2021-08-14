@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Footer from '../UI/footer';
-import Navbar from '../UI/navbar';
+import Navbar from '../UI/Navbar/navbar';
 
 function Layout({ children }) {
   return (

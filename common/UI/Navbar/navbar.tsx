@@ -7,6 +7,8 @@ import {
   PrimaryAnchorWrapperClasses,
   PrimaryAnchorClasses,
 } from '../../Styles/AnchorClasses';
+import NavbarHoverArea from './NavbarHoverArea';
+import DropdownItem from './DropdownItem';
 function Navbar() {
   const [showLinkLists, setShowLinkLists] = useState(false);
 
@@ -66,46 +68,17 @@ function Navbar() {
                 <Link href="/about">
                   <a className={PrimaryAnchorClasses}>About</a>
                 </Link>
-                <div className="group-hover:flex hidden absolute  left-0  w-full ">
-                  asd
-                  <div className=" flex flex-col text-white  w-full bg-black mt-9 px-16 py-4">
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Vision Mission</a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Management</a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>
-                        Governing Body members
-                      </a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>
-                        Approvals Ranking and Accreditation
-                      </a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Eminent Visitors</a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Media</a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Daily News</a>
-                    </Link>
-
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Eminent Visitors</a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Media</a>
-                    </Link>
-                    <Link href="">
-                      <a className={PrimaryAnchorClasses}>Daily News</a>
-                    </Link>
-                  </div>
-                </div>
+                <NavbarHoverArea>
+                  <DropdownItem href="">Vision Mission</DropdownItem>
+                  <DropdownItem href="">Management</DropdownItem>
+                  <DropdownItem href="">Governing Body members</DropdownItem>
+                  <DropdownItem href="">
+                    Approvals Ranking and Accreditation
+                  </DropdownItem>
+                  <DropdownItem href="">Eminent Visitors</DropdownItem>
+                  <DropdownItem href="">Media</DropdownItem>
+                  <DropdownItem href="">Daily</DropdownItem>
+                </NavbarHoverArea>
               </div>
 
               <div className={PrimaryAnchorWrapperClasses}>
