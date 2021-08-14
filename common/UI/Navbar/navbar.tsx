@@ -67,7 +67,7 @@ function Navbar() {
                 Apply
               </a>
             </nav>
-            {/* Primary Navbar */}
+            {/* *********Primary Navbar********* */}
             <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
               <div className={PrimaryAnchorWrapperClasses}>
                 <Link href="/about">
