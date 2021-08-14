@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FaBars, FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Logo } from '../../icons/';
@@ -80,7 +80,6 @@ function Navbar() {
                   <DropdownItem href="">Daily</DropdownItem>
                 </NavbarHoverArea>
               </div>
-
               <div className={PrimaryAnchorWrapperClasses}>
                 <Link href="/academics">
                   <a className={PrimaryAnchorClasses}>Academics</a>
@@ -106,14 +105,20 @@ function Navbar() {
                   <a className={PrimaryAnchorClasses}>Admission</a>
                 </Link>
               </div>
-              <button onClick={onSearch} className="py-7">
-                ICON
+              <button
+                onClick={onSearch}
+                className={PrimaryAnchorWrapperClasses}>
+                <FaSearch />
               </button>
             </nav>
           </div>
           <div className="lg:hidden flex justify-between items-center gap-6 ">
-            <button onClick={onSearch}>ICON </button>
-            <button onClick={onExtend}>ICON </button>
+            <button onClick={onSearch}>
+              <FaSearch />
+            </button>
+            <button onClick={onExtend}>
+              <FaBars />
+            </button>
           </div>
         </div>
       </div>
