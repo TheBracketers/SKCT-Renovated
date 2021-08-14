@@ -3,7 +3,9 @@ import Layout from '../common/components/Layout';
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <div className="pt-32">
+        <Component {...pageProps} />
+      </div>
     </Layout>
   );
 }
