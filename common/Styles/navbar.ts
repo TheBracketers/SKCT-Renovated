@@ -1,7 +1,7 @@
 const PrimaryAnchorWrapperClasses = 'group pt-7';
 
 const PrimaryAnchorClasses =
-  'group-hover:text-blue-500 border-b-8 pb-3 rounded-lg  border-transparent group-hover:border-black transition duration-300 ';
+  'group-hover:text-blue-500  border-b-8 py-3 rounded  border-transparent group-hover:border-black transition duration-300 ';
 
 const DropdownWrapperClasses = 'mb-6';
 
