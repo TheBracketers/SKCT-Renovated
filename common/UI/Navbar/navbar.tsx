@@ -21,8 +21,8 @@ function Navbar() {
   return (
     <div className="fixed w-full shadow-lg">
       <div className="relative p-0 m-0">
-        <div className="flex justify-between items-center px-10 py-2 md:py-4 lg:px-16 lg:py-4">
-          <div className="font-bold text-3xl cursor-pointer hover:text-blue-500 transition duration-300">
+        <div className="flex justify-between items-center px-5 py-2 md:py-4 lg:px-16 lg:py-4">
+          <div className="font-semibold lg:font-bold text-3xl cursor-pointer lg:hover:text-blue-500 transition duration-300">
             <Link href="/">
               <div className="flex justify-between items-center gap-3">
                 <Logo />
