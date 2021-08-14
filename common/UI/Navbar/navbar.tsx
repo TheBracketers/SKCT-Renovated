@@ -33,7 +33,7 @@ function Navbar() {
             </Link>
           </div>
           {/* *********Navbar********* */}
-          <div className="hidden lg:flex flex-col ">
+          <div className="hidden ipad-pro:flex flex-col ">
             {/* Secondary Navbar*/}
             <nav className="hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase ">
               <a className="hover:underline  transition duration-300 cursor-pointer">
@@ -113,7 +113,7 @@ function Navbar() {
             </nav>
           </div>
           {/* *********Responsive Navbar********* */}
-          <div className="lg:hidden flex justify-between items-center gap-6 ">
+          <div className="ipad-pro:hidden flex justify-between items-center gap-6 ">
             <button onClick={onSearch}>
               <FaSearch />
             </button>
