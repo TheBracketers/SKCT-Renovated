@@ -123,16 +123,12 @@ function Navbar() {
           </div>
         </div>
       </div>
+      {/* *********Mobile DropDown********* */}
       {showLinkLists && (
         <div className="absolute z-10 lg:hidden bg-black text-white ">
           {/* Todo:  Jayvan - Create a component that lists all the links*/}
         </div>
       )}
-      {/* {isHovered && (
-        <div
-          className="hidden lg:block absolute z-10 bg-black text-blue-500 w-full"
-          id="HoverArea"></div>
-      )} */}
     </div>
   );
 }
