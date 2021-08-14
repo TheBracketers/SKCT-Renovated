@@ -129,7 +129,10 @@ function Navbar() {
               </div>
               <button
                 onClick={onSearch}
-                className={PrimaryAnchorWrapperClasses}>
+                className={
+                  PrimaryAnchorWrapperClasses +
+                  ' transform hover:-rotate-12 transition duration-300'
+                }>
                 <FaSearch />
               </button>
             </nav>
