@@ -5,7 +5,7 @@ This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna Coll
 - [**SKCT-Renovated**](#skct-renovated)
     - [**Dependencies & Frameworks**](#dependencies--frameworks)
     - [**Languages**](#languages)
-    - [**Work in Progress 👷‍♂️**](#work-in-progress-️)
+    - [**Work Log 👷‍♂️**](#work-log-️)
 
 ### **Dependencies & Frameworks**
 
@@ -18,4 +18,16 @@ This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna Coll
 
 - [**Typescript**](https://www.typescriptlang.org/)
 
-### **Work in Progress 👷‍♂️**
+### **Work Log 👷‍♂️**
+
+- [ ] **Navbar**
+- [ ] **Pages**
+  - [ ] **_Home Page_**
+  - [ ] **_About Page_**
+  - [ ] **_Academic Page_**
+  - [ ] **_Admission Page_**
+  - [ ] **_Outcomes Page_**
+  - [ ] **Campus Life Page**
+  - [ ] **_Outcomes Page_**
+  - [ ] **_Admissions Page_**
+  - [ ] **_R&D Page_**
