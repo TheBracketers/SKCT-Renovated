@@ -20,8 +20,10 @@ function Navbar() {
 
   return (
     <div className="fixed w-full shadow-lg">
+      {/* *********Navbar Container********* */}
       <div className="relative p-0 m-0">
         <div className="flex justify-between items-center px-5 py-2 md:py-4 lg:px-16 lg:py-4">
+          {/* *********Logo********* */}
           <div className="font-semibold lg:font-bold text-3xl cursor-pointer lg:hover:text-blue-500 transition duration-300">
             <Link href="/">
               <div className="flex justify-between items-center gap-3">
@@ -30,8 +32,9 @@ function Navbar() {
               </div>
             </Link>
           </div>
-
+          {/* *********Navbar********* */}
           <div className="hidden lg:flex flex-col ">
+            {/* Secondary Navbar*/}
             <nav className="hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase ">
               <a className="hover:underline  transition duration-300 cursor-pointer">
                 Students
@@ -64,6 +67,7 @@ function Navbar() {
                 Apply
               </a>
             </nav>
+            {/* Primary Navbar */}
             <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
               <div className={PrimaryAnchorWrapperClasses}>
                 <Link href="/about">
@@ -108,6 +112,7 @@ function Navbar() {
               </button>
             </nav>
           </div>
+          {/* *********Responsive Navbar********* */}
           <div className="lg:hidden flex justify-between items-center gap-6 ">
             <button onClick={onSearch}>
               <FaSearch />
