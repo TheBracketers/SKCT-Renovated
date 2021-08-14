@@ -139,7 +139,7 @@ function Navbar() {
             </div>
             {/* *********Mobile DropDown********* */}
             {showLinkLists && (
-                <div className="absolute z-10  w-full h-screen bg-black text-white font-bold ">
+                <div className="absolute z-10 xl:hidden  w-full h-screen bg-black text-white font-bold ">
                     <Menu />
                 </div>
             )}
