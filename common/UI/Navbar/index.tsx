@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { FaBars, FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
-import { Logo } from '../../icons/';
+import { Logo } from '../../icons';
 import {
   PrimaryAnchorWrapperClasses,
-  PrimaryAnchorClasses
+  PrimaryAnchorClasses,
 } from '../../Styles';
 import NavbarHoverArea from './NavbarHoverArea';
 // dropdown menu
 import Menu from './MobileDropdown/Menu';
-
-
 
 import About from './DesktopDropdown/Dropdowns/About';
 function Navbar() {
@@ -111,9 +109,8 @@ function Navbar() {
                 onClick={onSearch}
                 className={
                   PrimaryAnchorWrapperClasses +
-                  " transform hover:-rotate-12 transition duration-300"
-                }
-              >
+                  ' transform hover:-rotate-12 transition duration-300'
+                }>
                 <FaSearch />
               </button>
             </nav>
