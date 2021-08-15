@@ -2,19 +2,22 @@ import React, { FC, useState } from "react";
 import Link from "next/link";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import AnimateHeight from "react-animate-height";
+
 const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
   const [isTouched, setIsTouched] = useState(false);
 
   return (
-    <>
+    <div className=" pt-6 px-3  ">
       <div
-        className="group pt-6 px-3 flex flex-col justify-between"
+        className="group flex pb-3 justify-between"
         onClick={() => {
-          console.log("Hello");
           setIsTouched((prev) => !prev);
         }}
-        onFocus={() => {
-          console.log("Hello");
+        tabIndex={0}
+        onBlur={() => {
+          setTimeout(() => {
+            setIsTouched(false);
+          }, 200);
         }}
       >
         <Link href={"/" + href}>
@@ -31,24 +34,24 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
         >
           <BsChevronDown />
         </div>
-        <AnimateHeight height={isTouched ? "auto" : 0}>
-          <div className="px-3">
-            <p>
-              I Think of we need to pass a component that contains all sublinks,
-              that'll be rendendered conditionally
-            </p>
-            <p>
-              I Think of we need to pass a component that contains all sublinks,
-              that'll be rendendered conditionally
-            </p>
-            <p>
-              I Think of we need to pass a component that contains all sublinks,
-              that'll be rendendered conditionally
-            </p>
-          </div>
-        </AnimateHeight>
       </div>
-    </>
+      <AnimateHeight height={isTouched ? "auto" : 0}>
+        <div className="px-3">
+          <p>
+            I Think of we need to pass a component that contains all sublinks,
+            that'll be rendendered conditionally
+          </p>
+          <p>
+            I Think of we need to pass a component that contains all sublinks,
+            that'll be rendendered conditionally
+          </p>
+          <p>
+            I Think of we need to pass a component that contains all sublinks,
+            that'll be rendendered conditionally
+          </p>
+        </div>
+      </AnimateHeight>
+    </div>
   );
 };
 
