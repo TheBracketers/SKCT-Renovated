@@ -12,7 +12,7 @@ module.exports = {
   },
   variants: {
     display: ['responsive', 'group-hover', 'group-focus'],
-    rotate: ['active', 'group-hover', 'hover'],
+    rotate: ['active', 'focus', 'group-hover', 'hover', 'group-focus'],
     extend: {},
   },
   plugins: [],
