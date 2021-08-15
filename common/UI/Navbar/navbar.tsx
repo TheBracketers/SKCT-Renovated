@@ -23,11 +23,11 @@ function Navbar() {
     <div className="fixed w-full shadow-lg">
       {/* *********Navbar Container********* */}
       <div className="relative p-0 m-0">
-        <div className="flex justify-between items-center px-5 py-2 md:py-4 lg:px-16 lg:py-4">
+        <div className="flex justify-between items-center px-5 py-2 md:py-4 ipad-pro:px-16 ipad-pro:py-4">
           {/* *********Logo********* */}
           <div className="font-semibold lg:font-bold text-3xl cursor-pointer lg:hover:text-blue-500 transition duration-300">
             <Link href="/">
-              <div className="flex justify-between items-center gap-3">
+              <div className="flex ipad-pro:text-normal justify-between items-center gap-3">
                 <Logo />
                 SKCT
               </div>
@@ -126,7 +126,7 @@ function Navbar() {
       </div>
       {/* *********Mobile DropDown********* */}
       {showLinkLists && (
-        <div className="absolute z-10 xl:hidden  w-full h-screen bg-black text-white font-bold ">
+        <div className="absolute z-10 ipad-pro:hidden pl-2 pt-5 w-full h-screen shadow-md bg-white font-bold ">
           <Menu />
         </div>
       )}
