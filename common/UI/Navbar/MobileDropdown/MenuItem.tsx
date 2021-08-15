@@ -1,26 +1,25 @@
-import React, { FC, useState } from "react";
-import Link from "next/link";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-import AnimateHeight from "react-animate-height";
+import React, { FC, useState } from 'react';
+import Link from 'next/link';
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import AnimateHeight from 'react-animate-height';
 
 const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
   const [isTouched, setIsTouched] = useState(false);
 
   return (
-    <div className=" pt-4 px-3  ">
-      <div
-        className="group flex pb-3 justify-between"
-        onClick={() => {
-          setIsTouched((prev) => !prev);
-        }}
-        tabIndex={0}
-        onBlur={() => {
-          setTimeout(() => {
-            setIsTouched(false);
-          }, 200);
-        }}
-      >
-        <Link href={"/" + href}>
+    <div
+      className=" pt-4 px-3  "
+      onClick={() => {
+        setIsTouched((prev) => !prev);
+      }}
+      tabIndex={0}
+      onBlur={() => {
+        setTimeout(() => {
+          setIsTouched(false);
+        }, 200);
+      }}>
+      <div className="group flex pb-3 justify-between">
+        <Link href={'/' + href}>
           <a className="align-middle group-hover:text-blue-500 transition duration-300">
             {name}
           </a>
@@ -28,14 +27,13 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
         <div
           className={
             !isTouched
-              ? "transform transition duration-300 -rotate-0"
-              : "transform transition duration-300 rotate-180"
-          }
-        >
+              ? 'transform transition duration-300 -rotate-0'
+              : 'transform transition duration-300 rotate-180'
+          }>
           <BsChevronDown />
         </div>
       </div>
-      <AnimateHeight height={isTouched ? "auto" : 0}>
+      <AnimateHeight height={isTouched ? 'auto' : 0}>
         <div className="px-3">
           <p>
             I Think of we need to pass a component that contains all sublinks,

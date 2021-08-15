@@ -130,7 +130,7 @@ function Navbar() {
       </div>
       {/* *********Mobile DropDown********* */}
       {showMobileDropdown && (
-        <div className="absolute z-10 mt-24 w-full h-screen bg-white text-black font-bold ">
+        <div className="absolute z-10 mt-20 md:mt-24 w-full ipad-pro:hidden h-screen bg-white text-black font-bold ">
           <Menu />
         </div>
       )}
