@@ -12,7 +12,7 @@ import Menu from './MobileDropdown/Menu';
 
 import About from './DesktopDropdown/Dropdowns/About';
 function Navbar() {
-  const [showLinkLists, setShowLinkLists] = useState(false);
+  const [showMobileDropdown, setShowLinkLists] = useState(false);
 
   const onSearch = (e) => {};
   const onExtend = () => {
@@ -125,8 +125,8 @@ function Navbar() {
         </div>
       </div>
       {/* *********Mobile DropDown********* */}
-      {showLinkLists && (
-        <div className="absolute z-10 ipad-pro:hidden pl-2 pt-5 w-full h-screen shadow-md bg-white font-bold ">
+      {showMobileDropdown && (
+        <div className="absolute overflow-y-auto z-10 ipad-pro:hidden pl-2 pt-5 w-full h-screen shadow-md bg-white font-bold ">
           <Menu />
         </div>
       )}
