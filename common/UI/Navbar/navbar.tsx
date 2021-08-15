@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { Logo } from '../../icons/';
 import {
   PrimaryAnchorWrapperClasses,
-  PrimaryAnchorClasses,
+  PrimaryAnchorClasses
 } from '../../Styles';
 import NavbarHoverArea from './NavbarHoverArea';
 // dropdown menu
 import Menu from './MobileDropdown/Menu';
+
+
 
 import About from './DesktopDropdown/Dropdowns/About';
 function Navbar() {
@@ -109,8 +111,9 @@ function Navbar() {
                 onClick={onSearch}
                 className={
                   PrimaryAnchorWrapperClasses +
-                  ' transform hover:-rotate-12 transition duration-300'
-                }>
+                  " transform hover:-rotate-12 transition duration-300"
+                }
+              >
                 <FaSearch />
               </button>
             </nav>
@@ -128,7 +131,7 @@ function Navbar() {
       </div>
       {/* *********Mobile DropDown********* */}
       {showMobileDropdown && (
-        <div className="absolute overflow-y-auto z-10 ipad-pro:hidden pl-2 pt-5 w-full h-screen shadow-md bg-white font-bold ">
+        <div className="absolute overflow-y-auto z-10 ipad-pro:hidden pl-2 pt-5 w-full MaxHeight  shadow-md bg-white font-bold ">
           <Menu />
         </div>
       )}

@@ -7,7 +7,7 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
   const [isTouched, setIsTouched] = useState(false);
 
   return (
-    <div className=" pt-6 px-3  ">
+    <div className=" pt-4 px-3  ">
       <div
         className="group flex pb-3 justify-between"
         onClick={() => {
