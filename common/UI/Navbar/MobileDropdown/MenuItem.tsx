@@ -9,16 +9,17 @@ const MenuItem: FC<{ href: String }> = ({ href, children }) => {
   return (
     <div
       className=" pt-4 px-3  "
-      onClick={() => {
-        setIsTouched(true);
-      }}
       tabIndex={0}
       onBlur={() => {
         setTimeout(() => {
           setIsTouched(false);
         }, 200);
       }}>
-      <div className="group flex pb-3 justify-between">
+      <div
+        className="group flex pb-3 justify-between"
+        onClick={() => {
+          setIsTouched((prev) => !prev);
+        }}>
         <Link href={'/' + href}>
           <a className="align-middle group-hover:text-blue-500 transition duration-300">
             {children}
