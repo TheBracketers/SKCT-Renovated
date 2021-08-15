@@ -1,7 +1,7 @@
-import React, { FC, useState } from 'react';
-import Link from 'next/link';
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
+import React, { FC, useState } from "react";
+import Link from "next/link";
+import { BsChevronDown } from "react-icons/bs";
+function MenuItem({ href, name }) {
   const [isTouched, setIsTouched] = useState(false);
 
   return (
@@ -9,13 +9,14 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
       <div
         className="group pt-6 px-3 flex justify-between"
         onClick={() => {
-          console.log('Hello');
+          console.log("Hello");
           setIsTouched((prev) => !prev);
         }}
         onFocus={() => {
-          console.log('Hello');
-        }}>
-        <Link href={'/' + href}>
+          console.log("Hello");
+        }}
+      >
+        <Link href={"/" + href}>
           <a className="align-middle group-hover:text-blue-500 transition duration-300">
             {name}
           </a>
@@ -23,9 +24,10 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
         <div
           className={
             !isTouched
-              ? 'transform transition duration-300 -rotate-0'
-              : 'transform transition duration-300 rotate-180'
-          }>
+              ? "transform transition duration-300 -rotate-0"
+              : "transform transition duration-300 rotate-180"
+          }
+        >
           <BsChevronDown />
         </div>
       </div>
@@ -47,6 +49,6 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
       )}
     </>
   );
-};
+}
 
 export default MenuItem;
