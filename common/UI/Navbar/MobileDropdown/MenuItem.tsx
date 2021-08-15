@@ -19,7 +19,7 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
         </Link>
         <div
           className={
-            isTouched
+            !isTouched
               ? 'transform transition duration-300 -rotate-0'
               : 'transform transition duration-300 rotate-180'
           }>
