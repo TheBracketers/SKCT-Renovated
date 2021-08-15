@@ -10,7 +10,7 @@ const MenuItem: FC<{ href: String }> = ({ href, children }) => {
     <div
       className=" pt-4 px-3  "
       onClick={() => {
-        setIsTouched((prev) => !prev);
+        setIsTouched(true);
       }}
       tabIndex={0}
       onBlur={() => {
