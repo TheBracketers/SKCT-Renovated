@@ -18,7 +18,7 @@ function About() {
 
       <DropDownColumn className="hover:text-red-500">
         <DropdownItem href="">
-          <img src="https://source.unsplash.com/random" className="w-full" />
+          <h1>A CONTENT</h1>
         </DropdownItem>
       </DropDownColumn>
 

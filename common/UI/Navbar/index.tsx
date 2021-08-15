@@ -6,7 +6,7 @@ import {
   PrimaryAnchorWrapperClasses,
   PrimaryAnchorClasses,
 } from '../../Styles';
-import NavbarHoverArea from './NavbarHoverArea';
+import NavbarHoverArea from './DesktopDropdown/NavbarHoverArea';
 // dropdown menu
 import Menu from './MobileDropdown/Menu';
 
@@ -128,7 +128,7 @@ function Navbar() {
       </div>
       {/* *********Mobile DropDown********* */}
       {showMobileDropdown && (
-        <div className="absolute overflow-y-auto z-10 ipad-pro:hidden pl-2 pt-5 w-full MaxHeight  shadow-md bg-white font-bold ">
+        <div className="min-h-screen overflow-y-auto z-10 ipad-pro:hidden pl-2 pt-5   shadow-md bg-white font-bold ">
           <Menu />
         </div>
       )}
