@@ -1,13 +1,14 @@
 import React, { FC, useState } from "react";
 import Link from "next/link";
-import { BsChevronDown } from "react-icons/bs";
-function MenuItem({ href, name }) {
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import AnimateHeight from "react-animate-height";
+const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
   const [isTouched, setIsTouched] = useState(false);
 
   return (
     <>
       <div
-        className="group pt-6 px-3 flex justify-between"
+        className="group pt-6 px-3 flex flex-col justify-between"
         onClick={() => {
           console.log("Hello");
           setIsTouched((prev) => !prev);
@@ -30,25 +31,25 @@ function MenuItem({ href, name }) {
         >
           <BsChevronDown />
         </div>
+        <AnimateHeight height={isTouched ? "auto" : 0}>
+          <div className="px-3">
+            <p>
+              I Think of we need to pass a component that contains all sublinks,
+              that'll be rendendered conditionally
+            </p>
+            <p>
+              I Think of we need to pass a component that contains all sublinks,
+              that'll be rendendered conditionally
+            </p>
+            <p>
+              I Think of we need to pass a component that contains all sublinks,
+              that'll be rendendered conditionally
+            </p>
+          </div>
+        </AnimateHeight>
       </div>
-      {isTouched && (
-        <div className="px-3">
-          <p>
-            I Think of we need to pass a component that contains all sublinks,
-            that'll be rendendered conditionally
-          </p>
-          <p>
-            I Think of we need to pass a component that contains all sublinks,
-            that'll be rendendered conditionally
-          </p>
-          <p>
-            I Think of we need to pass a component that contains all sublinks,
-            that'll be rendendered conditionally
-          </p>
-        </div>
-      )}
     </>
   );
-}
+};
 
 export default MenuItem;
