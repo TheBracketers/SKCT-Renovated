@@ -22,7 +22,7 @@ function Navbar() {
   };
 
   return (
-    <div className="mb-2 overflow-auto">
+    <div className="mb-2 overflow-auto ipad-pro:overflow-visible">
       <div className="fixed z-50 w-full shadow-lg  bg-white ">
         {/* *********Navbar Container********* */}
         <div className="relative p-0">
@@ -73,9 +73,9 @@ function Navbar() {
               </nav>
               {/* *********Primary Navbar********* */}
               <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
-                <div className={PrimaryAnchorWrapperClasses}>
+                <div className={PrimaryAnchorWrapperClasses + 'pl-9'}>
                   <Link href="/about">
-                    <a className={PrimaryAnchorClasses}>About</a>
+                    <a className={PrimaryAnchorClasses + 'px-2'}>About</a>
                   </Link>
                   <NavbarHoverArea>
                     <About />
