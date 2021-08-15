@@ -1,20 +1,21 @@
 import React, { FC } from 'react';
 import MenuItem from './MenuItem';
+import SecondaryMenuItem from './SecondaryMenuItem';
 
 function Menu() {
   return (
     <div className="space-y divide-y px-2 ipad-pro:px-8  ">
-      <MenuItem name="About" href="about" />
-      <MenuItem name="Academics" href="academics" />
-      <MenuItem name="Research & Work" href="R&D" />
-      <MenuItem name="Campus Life" href="campus-life" />
-      <MenuItem name="Outcomes" href="outcomes" />
-      <MenuItem name="Admission" href="admissions" />
-      <MenuItem name="Students" href="" />
-      <MenuItem name="Parents" href="" />
-      <MenuItem name="Alumni" href="" />
-      <MenuItem name="faculty" href="" />
-      <MenuItem name="Staff" href="" />
+      <MenuItem href="about">About</MenuItem>
+      <MenuItem href="academics">Academics</MenuItem>
+      <MenuItem href="R&D">Research & Work"</MenuItem>
+      <MenuItem href="campus-life">Campus Life</MenuItem>
+      <MenuItem href="outcomes">Outcomes</MenuItem>
+      <MenuItem href="admissions">Admission</MenuItem>
+      <SecondaryMenuItem href="">Students</SecondaryMenuItem>
+      <SecondaryMenuItem href="">Parents</SecondaryMenuItem>
+      <SecondaryMenuItem href="">Alumni</SecondaryMenuItem>
+      <SecondaryMenuItem href="">faculty</SecondaryMenuItem>
+      <SecondaryMenuItem href="">Staff</SecondaryMenuItem>
     </div>
   );
 }

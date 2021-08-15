@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import AnimateHeight from 'react-animate-height';
 
-const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
+const MenuItem: FC<{ href: String }> = ({ href, children }) => {
   const [isTouched, setIsTouched] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
       <div className="group flex pb-3 justify-between">
         <Link href={'/' + href}>
           <a className="align-middle group-hover:text-blue-500 transition duration-300">
-            {name}
+            {children}
           </a>
         </Link>
         <div
