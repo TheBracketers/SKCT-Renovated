@@ -1,7 +1,7 @@
 import React from 'react';
-import DropDownColumn from './DropDownColumn';
-import DropdownItem from './DropdownItem';
-import DropdownWrapper from './DropdownWrapper';
+import DropDownColumn from '../DropDownColumn';
+import DropdownItem from '../DropdownItem';
+import DropdownWrapper from '../DropdownWrapper';
 
 function About() {
   return (
