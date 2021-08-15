@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaBars, FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
 import { Logo } from '../../icons/';
@@ -12,11 +12,11 @@ import Menu from './MobileDropdown/Menu';
 
 import About from './DesktopDropdown/Dropdowns/About';
 function Navbar() {
-  const [showMobileDropdown, setShowLinkLists] = useState(false);
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
 
   const onSearch = (e) => {};
   const onExtend = () => {
-    setShowLinkLists((prev) => !prev);
+    setShowMobileDropdown((prev) => !prev);
   };
 
   return (
