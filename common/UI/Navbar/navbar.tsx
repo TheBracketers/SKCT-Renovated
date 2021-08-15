@@ -13,7 +13,9 @@ import Menu from './MobileDropdown/Menu';
 import About from './DesktopDropdown/Dropdowns/About';
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
-
+  useEffect(() => {
+    setShowMobileDropdown(false);
+  }, []);
   const onSearch = (e) => {};
   const onExtend = () => {
     setShowMobileDropdown((prev) => !prev);

@@ -11,6 +11,9 @@ const MenuItem: FC<{ href: String; name: String }> = ({ href, name }) => {
         onClick={() => {
           console.log('Hello');
           setIsTouched((prev) => !prev);
+        }}
+        onFocus={() => {
+          console.log('Hello');
         }}>
         <Link href={'/' + href}>
           <a className="align-middle group-hover:text-blue-500 transition duration-300">
