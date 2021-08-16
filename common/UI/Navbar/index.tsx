@@ -26,7 +26,9 @@ function Navbar() {
     setTimeout(() => {
       searchRef.current.focus();
     });
-    setShowSearch(true);
+
+    setShowSearch((prev) => !prev);
+
     setShowMobileDropdown(false);
   };
   const onExtend = () => {
