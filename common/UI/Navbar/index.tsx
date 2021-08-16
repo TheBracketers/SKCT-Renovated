@@ -21,9 +21,11 @@ function Navbar() {
   }, []);
   const onSearch = () => {
     setShowSearch((prev) => !prev);
+    setShowMobileDropdown(false);
   };
   const onExtend = () => {
     setShowMobileDropdown((prev) => !prev);
+    setShowSearch(false);
   };
 
   return (
