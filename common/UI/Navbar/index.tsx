@@ -11,19 +11,33 @@ import NavbarHoverArea from './DesktopDropdown/NavbarHoverArea';
 import Menu from './MobileDropdown/Menu';
 
 import About from './DesktopDropdown/Dropdowns/About';
+import SearchBar from './SearchBar';
+import AnimateHeight from 'react-animate-height';
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   useEffect(() => {
     setShowMobileDropdown(false);
   }, []);
-  const onSearch = (e) => {};
+  const onSearch = () => {
+    setShowSearch((prev) => !prev);
+  };
   const onExtend = () => {
     setShowMobileDropdown((prev) => !prev);
   };
 
   return (
-    <div className="mb-2 overflow-auto ipad-pro:overflow-visible">
-      <div className="fixed z-50 w-full shadow-lg  bg-white ">
+    <div className="relative mb-2 overflow-auto ipad-pro:overflow-visible">
+      <div className="  w-full bg-white ">
+        <AnimateHeight height={showSearch ? 'auto' : 0}>
+          <SearchBar
+            onClick={() => {
+              setShowSearch(false);
+            }}
+          />
+        </AnimateHeight>
+      </div>
+      <div className="fixed z-40 w-full shadow-lg  bg-white ">
         {/* *********Navbar Container********* */}
         <div className="relative p-0">
           <div className="flex justify-between items-center px-5 py-2 md:py-4 ipad-pro:px-16 ipad-pro:py-4">
