@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { FaBars, FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
 import { Logo } from '../../icons';
@@ -16,11 +16,17 @@ import AnimateHeight from 'react-animate-height';
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const searchRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     setShowMobileDropdown(false);
+    setShowSearch(false);
+    searchRef.current.focus();
   }, []);
   const onSearch = () => {
-    setShowSearch((prev) => !prev);
+    setTimeout(() => {
+      searchRef.current.focus();
+    });
+    setShowSearch(true);
     setShowMobileDropdown(false);
   };
   const onExtend = () => {
@@ -33,6 +39,7 @@ function Navbar() {
       <div className="w-full bg-white ">
         <AnimateHeight height={showSearch ? 'auto' : 0}>
           <SearchBar
+            ref={searchRef}
             onClose={() => {
               setTimeout(() => {
                 setShowSearch(false);
