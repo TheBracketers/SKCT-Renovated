@@ -8,8 +8,7 @@ const DropDownColumn: FC<{ className?: string }> = ({
   return (
     <div
       className={
-        'my-6 px-6 w-1/3 overflow-hidden transition duration-300 ' +
-          className || ''
+        'flex flex-col overflow-hidden min-w-min w-1/3 ' + className || ''
       }>
       {children}
     </div>
