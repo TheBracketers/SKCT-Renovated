@@ -24,7 +24,7 @@ function Navbar() {
     } else {
       searchRef.current.blur();
     }
-  }, [focus, showSearch]);
+  }, [showSearch]);
 
   const onSearch = () => {
     setShowSearch(true);
