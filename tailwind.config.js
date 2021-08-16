@@ -8,7 +8,6 @@ module.exports = {
       'ipad-pro': '1095px',
       ...defaultTheme.screens,
     },
-    
     extend: {},
   },
   variants: {
