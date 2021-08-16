@@ -143,11 +143,14 @@ function Navbar() {
         </div>
       </div>
       {/* *********Mobile DropDown********* */}
-      {showMobileDropdown && (
-        <div className="absolute z-10 mt-20 md:mt-24 w-full ipad-pro:hidden h-screen bg-white text-black font-bold ">
-          <Menu />
-        </div>
-      )}
+
+      <div className="absolute w-full z-10">
+        <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={500}>
+          <div className="mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold ">
+            <Menu />
+          </div>
+        </AnimateHeight>
+      </div>
     </div>
   );
 }
