@@ -28,15 +28,6 @@ function Navbar() {
 
   return (
     <div className="relative mb-2 overflow-auto ipad-pro:overflow-visible">
-      <div className="absolute z-50 w-full bg-white ">
-        <AnimateHeight height={showSearch ? 'auto' : 0}>
-          <SearchBar
-            onClick={() => {
-              setShowSearch(false);
-            }}
-          />
-        </AnimateHeight>
-      </div>
       <div className="fixed z-40 w-full shadow-lg  bg-white ">
         {/* *********Navbar Container********* */}
         <div className="relative p-0">
@@ -130,6 +121,7 @@ function Navbar() {
                 </button>
               </nav>
             </div>
+
             {/* *********Responsive Navbar********* */}
             <div className="ipad-pro:hidden flex justify-between items-center gap-6 ">
               <button onClick={onSearch}>
@@ -140,9 +132,19 @@ function Navbar() {
               </button>
             </div>
           </div>
+          <div className="w-full bg-white ">
+            <AnimateHeight height={showSearch ? 'auto' : 0}>
+              <SearchBar
+                onClick={() => {
+                  setShowSearch(false);
+                }}
+              />
+            </AnimateHeight>
+          </div>
         </div>
       </div>
       {/* *********Mobile DropDown********* */}
+
       {showMobileDropdown && (
         <div className="absolute z-10 mt-20 md:mt-24 w-full ipad-pro:hidden h-screen bg-white text-black font-bold ">
           <Menu />
