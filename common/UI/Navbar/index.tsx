@@ -33,8 +33,10 @@ function Navbar() {
       <div className="w-full bg-white ">
         <AnimateHeight height={showSearch ? 'auto' : 0}>
           <SearchBar
-            onClick={() => {
-              setShowSearch(false);
+            onClose={() => {
+              setTimeout(() => {
+                setShowSearch(false);
+              }, 100);
             }}
           />
         </AnimateHeight>
@@ -147,7 +149,7 @@ function Navbar() {
       {/* *********Mobile DropDown********* */}
 
       <div className="absolute w-full z-10">
-        <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={500}>
+        <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={700}>
           <div className="mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold ">
             <Menu />
           </div>

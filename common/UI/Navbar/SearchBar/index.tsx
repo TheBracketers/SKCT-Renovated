@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 import { FaTimes } from 'react-icons/fa';
 
-function SearchBar({ onClick }) {
+function SearchBar({ onClose }) {
   const [searchText, setSearchText] = useState('');
   const onBlurHandler = () => {
-    onClick();
+    onClose();
     setTimeout(() => {
       setSearchText('');
     }, 1000);
@@ -25,9 +25,9 @@ function SearchBar({ onClick }) {
         className="uppercase font-semibold ipad-pro:font-bold ipad-pro:tracking-wide border-b-2flex justify-between w-full placeholder-gray-400 outline-none text-xl ipad-pro:text-3xl border-black p-5 "
       />
       <div
-        onClick={onClick}
+        onClick={onClose}
         className={
-          'text-xl pr-2 ipad:pro:text-3xl transition duration-300 transform ease-in-out hover:-rotate-180 ' +
+          'text-xl mr-2 ipad:pro:text-3xl transition duration-300 transform ease-in-out hover:-rotate-90 ' +
           faTimesClassNames
         }>
         <FaTimes />
