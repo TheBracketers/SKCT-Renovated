@@ -7,7 +7,7 @@ function Menu() {
     <div className="space-y divide-y px-2 ipad-pro:px-8  ">
       <MenuItem href="about">About</MenuItem>
       <MenuItem href="academics">Academics</MenuItem>
-      <MenuItem href="R&D">Research & Work"</MenuItem>
+      <MenuItem href="R&D">Research & Work</MenuItem>
       <MenuItem href="campus-life">Campus Life</MenuItem>
       <MenuItem href="outcomes">Outcomes</MenuItem>
       <MenuItem href="admissions">Admission</MenuItem>

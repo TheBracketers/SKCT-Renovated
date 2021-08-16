@@ -44,13 +44,13 @@ function Navbar() {
       <div className="fixed z-40 w-full shadow-lg  bg-white ">
         {/* *********Navbar Container********* */}
         <div className="relative p-0">
-          <div className="flex justify-between items-center px-5 py-2 md:py-4 ipad-pro:px-16 ipad-pro:py-4">
+          <div className="flex justify-between items-center px-5 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4">
             {/* *********Logo********* */}
-            <div className="font-semibold lg:font-bold text-3xl cursor-pointer lg:hover:text-blue-400 transition duration-300">
+            <div className="font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300">
               <Link href="/">
                 <div className="flex ipad-pro:text-normal justify-between items-center gap-3">
-                  <Logo />
-                  SKCT
+                  <Logo width={9} />
+                  <h2 className="text-2xl">SKCT</h2>
                 </div>
               </Link>
             </div>
@@ -136,10 +136,14 @@ function Navbar() {
             </div>
             {/* *********Responsive Navbar********* */}
             <div className="ipad-pro:hidden flex justify-between items-center gap-6 ">
-              <button onClick={onSearch}>
+              <button
+                className="px-1 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125"
+                onClick={onSearch}>
                 <FaSearch />
               </button>
-              <button onClick={onExtend}>
+              <button
+                className="px-1 transform scale-1 transition duration-200 hover:scale-125  "
+                onClick={onExtend}>
                 <FaBars />
               </button>
             </div>
@@ -149,7 +153,7 @@ function Navbar() {
       {/* *********Mobile DropDown********* */}
 
       <div className="absolute w-full z-10">
-        <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={700}>
+        <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={610}>
           <div className="mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold ">
             <Menu />
           </div>
