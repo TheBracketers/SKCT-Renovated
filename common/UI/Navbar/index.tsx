@@ -46,7 +46,7 @@ function Navbar() {
         <div className="relative p-0">
           <div className="flex justify-between items-center px-5 py-2 md:py-4 ipad-pro:px-16 ipad-pro:py-4">
             {/* *********Logo********* */}
-            <div className="font-semibold lg:font-bold text-3xl cursor-pointer lg:hover:text-blue-500 transition duration-300">
+            <div className="font-semibold lg:font-bold text-3xl cursor-pointer lg:hover:text-blue-400 transition duration-300">
               <Link href="/">
                 <div className="flex ipad-pro:text-normal justify-between items-center gap-3">
                   <Logo />
@@ -85,7 +85,7 @@ function Navbar() {
                 <a className="hover:underline  transition duration-300 cursor-pointer">
                   Blogs
                 </a>
-                <a className="hover:underline text-blue-500 transition duration-300 cursor-pointer">
+                <a className="hover:underline text-blue-400 transition duration-300 cursor-pointer">
                   Apply
                 </a>
               </nav>

@@ -21,7 +21,7 @@ const MenuItem: FC<{ href: String }> = ({ href, children }) => {
           setIsTouched((prev) => !prev);
         }}>
         <Link href={'/' + href}>
-          <a className="align-middle group-hover:text-blue-500 transition duration-300">
+          <a className="align-middle group-hover:text-blue-400 transition duration-300">
             {children}
           </a>
         </Link>
