@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
-import {
-  DropdownClasses,
-  DropdownWrapperClasses,
-} from '../../../Styles/navbar';
 
 const DropdownItem: FC<{ href: string }> = ({ children, href }) => {
   return (
-    <div className={DropdownWrapperClasses}>
+    <div className="mb-6">
       <Link href={href}>
-        <a className={DropdownClasses}>{children}</a>
+        <a className="hover:text-blue-400 transition duration-300">
+          {children}
+        </a>
       </Link>
     </div>
   );
