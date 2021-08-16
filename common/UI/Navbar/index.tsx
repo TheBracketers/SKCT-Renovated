@@ -17,16 +17,18 @@ function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
-  const [focus, setFocus] = useState(false);
 
   useEffect(() => {
-    focus ? searchRef.current.focus() : searchRef.current.blur();
-  }, [focus]);
+    if (showSearch) {
+      searchRef.current.focus();
+    } else {
+      searchRef.current.blur();
+    }
+  }, [focus, showSearch]);
 
   const onSearch = () => {
     setShowSearch(true);
     setShowMobileDropdown(false);
-    setFocus(true);
   };
   const onExtend = () => {
     setShowMobileDropdown((prev) => !prev);
@@ -34,7 +36,6 @@ function Navbar() {
   };
 
   const onLostFocus = () => {
-    setFocus(false);
     setTimeout(() => {
       setShowSearch(false);
     }, 100);
