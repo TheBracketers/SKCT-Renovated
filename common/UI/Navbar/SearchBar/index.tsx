@@ -15,7 +15,7 @@ function SearchBar({ onClick }) {
   };
   const faTimesClassNames = searchText === '' ? 'text-gray-400' : '';
   return (
-    <div className="px-16 flex  items-center gap-6 justify-between w-screen h-full ">
+    <div className="px-16 flex mb-2  items-center gap-6 justify-between w-screen h-full ">
       <input
         placeholder="Search..."
         type="text"

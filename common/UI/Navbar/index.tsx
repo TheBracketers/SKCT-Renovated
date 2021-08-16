@@ -27,8 +27,8 @@ function Navbar() {
   };
 
   return (
-    <div className="mb-2 overflow-auto ipad-pro:overflow-visible">
-      <div className="w-full bg-white ">
+    <div className="relative mb-2 overflow-auto ipad-pro:overflow-visible">
+      <div className="absolute z-50 w-full bg-white ">
         <AnimateHeight height={showSearch ? 'auto' : 0}>
           <SearchBar
             onClick={() => {
