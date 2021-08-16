@@ -17,33 +17,26 @@ function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
+  const [focus, setFocus] = useState(false);
 
   useEffect(() => {
-    setShowMobileDropdown(false);
-    setShowSearch(false);
-    searchRef.current.focus();
-  }, []);
+    focus ? searchRef.current.focus() : searchRef.current.blur();
+  }, [focus]);
+
   const onSearch = () => {
-    setShowSearch((prev) => !prev);
+    setShowSearch(true);
     setShowMobileDropdown(false);
-    setTimeout(() => {
-      searchRef.current.focus();
-    });
+    setFocus(true);
   };
   const onExtend = () => {
     setShowMobileDropdown((prev) => !prev);
     setShowSearch(false);
   };
 
-  const onCloseHandler = () => {
+  const onLostFocus = () => {
+    setFocus(false);
     setTimeout(() => {
       setShowSearch(false);
-    }, 50);
-  };
-
-  const onBlurHandler = () => {
-    setTimeout(() => {
-      searchRef.current.blur();
     }, 100);
   };
 
@@ -53,8 +46,8 @@ function Navbar() {
         <AnimateHeight height={showSearch ? 'auto' : 0}>
           <SearchBar
             ref={searchRef}
-            onClose={onCloseHandler}
-            onBlur={onBlurHandler}
+            onClose={onLostFocus}
+            onBlur={onLostFocus}
           />
         </AnimateHeight>
       </div>
