@@ -11,15 +11,15 @@ import DropdownWrapper from '../DropdownWrapper';
 import NavbarHoverArea from '../NavbarHoverArea';
 import NavbarLink from '../NavbarLink';
 
-function About() {
+function Outcomes() {
   const [showHoverArea, setShowHoverArea] = useState(false);
   const toggleHoverArea = () => {
     setShowHoverArea((prev) => !prev);
   };
   return (
     <div onMouseEnter={toggleHoverArea} onMouseLeave={toggleHoverArea}>
-      <div className="pl-9">
-        <NavbarLink href="/about">About</NavbarLink>
+      <div>
+        <NavbarLink href="/outcomes">Outcomes</NavbarLink>
       </div>
       <NavbarHoverArea show={showHoverArea}>
         <DropdownWrapper>
@@ -53,4 +53,4 @@ function About() {
   );
 }
 
-export { About };
+export { Outcomes };

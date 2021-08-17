@@ -1,9 +1,4 @@
-import Link from 'next/link';
 import React, { useState } from 'react';
-import {
-  PrimaryAnchorClasses,
-  PrimaryAnchorWrapperClasses,
-} from '../../../../Styles';
 import DropDownColumn from '../DropDownColumn';
 import DropdownItem from '../DropdownItem';
 import DropdownWrapper from '../DropdownWrapper';
@@ -11,15 +6,15 @@ import DropdownWrapper from '../DropdownWrapper';
 import NavbarHoverArea from '../NavbarHoverArea';
 import NavbarLink from '../NavbarLink';
 
-function About() {
+function Research() {
   const [showHoverArea, setShowHoverArea] = useState(false);
   const toggleHoverArea = () => {
     setShowHoverArea((prev) => !prev);
   };
   return (
     <div onMouseEnter={toggleHoverArea} onMouseLeave={toggleHoverArea}>
-      <div className="pl-9">
-        <NavbarLink href="/about">About</NavbarLink>
+      <div>
+        <NavbarLink href="/R&D">Research</NavbarLink>
       </div>
       <NavbarHoverArea show={showHoverArea}>
         <DropdownWrapper>
@@ -53,4 +48,4 @@ function About() {
   );
 }
 
-export { About };
+export { Research };

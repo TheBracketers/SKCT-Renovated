@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Transition } from 'react-transition-group';
 
 const NavbarHoverArea: FC<{ show: boolean }> = ({ show, children }) => {
-  const duration = 300;
+  const duration = 500;
 
   const defaultStyle = {
     transition: `opacity ${duration}ms ease-in-out`,
@@ -10,14 +10,14 @@ const NavbarHoverArea: FC<{ show: boolean }> = ({ show, children }) => {
   };
 
   const transitionStyles = {
-    entering: { opacity: 1 },
+    entering: { opacity: 0 },
     entered: { opacity: 1 },
-    exiting: { opacity: 0 },
+    exiting: { opacity: 1 },
     exited: { opacity: 0 },
   };
 
   return (
-    <Transition in={show} mountOnEnter mountOnLeave duration={duration}>
+    <Transition in={show} mountOnEnter unmountOnExit duration={duration}>
       {(state) => (
         <div
           className="absolute left-0  w-full"

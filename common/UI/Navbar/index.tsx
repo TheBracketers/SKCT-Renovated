@@ -6,13 +6,19 @@ import {
   PrimaryAnchorWrapperClasses,
   PrimaryAnchorClasses,
 } from '../../Styles';
-import NavbarHoverArea from './DesktopDropdown/NavbarHoverArea';
-// dropdown menu
+
 import Menu from './MobileDropdown/Menu';
 
-import About from './DesktopDropdown/Dropdowns/About';
 import SearchBar from './SearchBar';
 import AnimateHeight from 'react-animate-height';
+import {
+  Academics,
+  About,
+  Research,
+  Outcomes,
+} from './DesktopDropdown/Dropdowns';
+import { CampusLife } from './DesktopDropdown/Dropdowns/CampusLife';
+import { Admission } from './DesktopDropdown/Dropdowns/Admission';
 
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
@@ -41,10 +47,6 @@ function Navbar() {
     setTimeout(() => {
       setShowSearch(false);
     }, 100);
-  };
-
-  const toggleHoverArea = () => {
-    setShowHoverArea((prev) => !prev);
   };
 
   return (
@@ -109,32 +111,12 @@ function Navbar() {
               {/* *********Primary Navbar********* */}
               <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
                 <About />
+                <Academics />
+                <Research />
+                <CampusLife />
+                <Outcomes />
+                <Admission />
 
-                <div className={PrimaryAnchorWrapperClasses}>
-                  <Link href="/academics">
-                    <a className={PrimaryAnchorClasses}>Academics</a>
-                  </Link>
-                </div>
-                <div className={PrimaryAnchorWrapperClasses}>
-                  <Link href="/R&D">
-                    <a className={PrimaryAnchorClasses}>Research & Work</a>
-                  </Link>
-                </div>
-                <div className={PrimaryAnchorWrapperClasses}>
-                  <Link href="/campus-life">
-                    <a className={PrimaryAnchorClasses}>Campus Life</a>
-                  </Link>
-                </div>
-                <div className={PrimaryAnchorWrapperClasses}>
-                  <Link href="/outcomes">
-                    <a className={PrimaryAnchorClasses}>Outcomes</a>
-                  </Link>
-                </div>
-                <div className={PrimaryAnchorWrapperClasses}>
-                  <Link href="/admissions">
-                    <a className={PrimaryAnchorClasses}>Admission</a>
-                  </Link>
-                </div>
                 <button
                   onClick={onSearch}
                   className={

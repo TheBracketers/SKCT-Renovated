@@ -7,7 +7,7 @@ import {
 
 const NavbarLink: React.FC<{ href: string }> = ({ href, children }) => {
   return (
-    <div className={PrimaryAnchorWrapperClasses + 'pl-9'}>
+    <div className={PrimaryAnchorWrapperClasses}>
       <Link href={href}>
         <a className={PrimaryAnchorClasses + 'px-2'}>{children}</a>
       </Link>
