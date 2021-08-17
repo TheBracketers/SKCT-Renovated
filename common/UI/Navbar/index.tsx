@@ -148,7 +148,7 @@ function Navbar() {
       <div className="absolute w-full z-10">
         <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={610}>
           <div className="mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold ">
-            <Menu />
+            <Menu onClickHandle={onExtend} />
           </div>
         </AnimateHeight>
       </div>

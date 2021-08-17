@@ -3,49 +3,48 @@ import Link from "next/link";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import AnimateHeight from "react-animate-height";
 
-const MenuItem: FC<{ href: String; name: String }> = ({
-  href,
-  name,
-  children,
-}) => {
-  const [isTouched, setIsTouched] = useState(false);
+const MenuItem: FC<{ href: String; name: String; onMouseDown?: () => void }> =
+  ({ href, name, children, onMouseDown }) => {
+    const [isTouched, setIsTouched] = useState(false);
 
-  return (
-    <div
-      className=" pt-4 px-3  "
-      tabIndex={0}
-      onBlur={() => {
-        setTimeout(() => {
-          setIsTouched(false);
-        }, 200);
-      }}
-    >
+    return (
       <div
-        className="group flex pb-3 justify-between"
-        onClick={() => {
-          setIsTouched((prev) => !prev);
+        className=" pt-4 px-3  "
+        tabIndex={0}
+        onBlur={() => {
+          setTimeout(() => {
+            setIsTouched(false);
+          }, 200);
         }}
       >
-        <Link href={"/" + href}>
-          <a className="align-middle group-hover:text-blue-400 transition duration-300">
-            {name}
-          </a>
-        </Link>
         <div
-          className={
-            !isTouched
-              ? "transform transition duration-300 -rotate-0"
-              : "transform transition duration-300 rotate-180"
-          }
+          className="group flex pb-3 justify-between"
+          onClick={() => {
+            setIsTouched((prev) => !prev);
+          }}
         >
-          {name != "Admission" && <BsChevronDown />}
+          <div onMouseDown={onMouseDown}>
+            <Link href={"/" + href}>
+              <a className="align-middle group-hover:text-blue-400 transition duration-300">
+                {name}
+              </a>
+            </Link>
+          </div>
+          <div
+            className={
+              !isTouched
+                ? "transform transition duration-300 -rotate-0"
+                : "transform transition duration-300 rotate-180"
+            }
+          >
+            {name != "Admission" && <BsChevronDown />}
+          </div>
         </div>
+        <AnimateHeight height={isTouched ? "auto" : 0}>
+          <div>{children}</div>
+        </AnimateHeight>
       </div>
-      <AnimateHeight height={isTouched ? "auto" : 0}>
-        <div >{children}</div>
-      </AnimateHeight>
-    </div>
-  );
-};
+    );
+  };
 
 export default MenuItem;
