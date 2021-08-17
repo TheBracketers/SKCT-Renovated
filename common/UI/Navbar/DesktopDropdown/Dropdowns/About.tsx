@@ -19,8 +19,11 @@ function About() {
   };
 
   return (
-    <div onMouseEnter={toggleHoverArea} onMouseLeave={toggleHoverArea}>
-      <div className="pl-9">
+    <div
+      onMouseEnter={toggleHoverArea}
+      onMouseLeave={toggleHoverArea}
+      className="group">
+      <div className=" pl-9">
         <NavbarLink href="/about">About</NavbarLink>
       </div>
       <NavbarHoverArea show={showHoverArea}>

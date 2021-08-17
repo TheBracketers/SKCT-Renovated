@@ -16,7 +16,10 @@ function Admission() {
     setShowHoverArea((prev) => !prev);
   };
   return (
-    <div onMouseEnter={toggleHoverArea} onMouseLeave={toggleHoverArea}>
+    <div
+      onMouseEnter={toggleHoverArea}
+      onMouseLeave={toggleHoverArea}
+      className="group">
       <div>
         <NavbarLink href="/admissions">Admissions</NavbarLink>
       </div>

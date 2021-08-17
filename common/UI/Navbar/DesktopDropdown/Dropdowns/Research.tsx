@@ -12,7 +12,10 @@ function Research() {
     setShowHoverArea((prev) => !prev);
   };
   return (
-    <div onMouseEnter={toggleHoverArea} onMouseLeave={toggleHoverArea}>
+    <div
+      onMouseEnter={toggleHoverArea}
+      onMouseLeave={toggleHoverArea}
+      className="group">
       <div>
         <NavbarLink href="/R&D">Research</NavbarLink>
       </div>

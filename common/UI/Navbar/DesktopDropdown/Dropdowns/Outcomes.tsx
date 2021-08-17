@@ -17,7 +17,10 @@ function Outcomes() {
     setShowHoverArea((prev) => !prev);
   };
   return (
-    <div onMouseEnter={toggleHoverArea} onMouseLeave={toggleHoverArea}>
+    <div
+      onMouseEnter={toggleHoverArea}
+      onMouseLeave={toggleHoverArea}
+      className="group">
       <div>
         <NavbarLink href="/outcomes">Outcomes</NavbarLink>
       </div>

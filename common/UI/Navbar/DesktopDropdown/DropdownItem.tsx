@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-const DropdownItem: FC<{ href: string; onMouseDown: () => void }> = ({
+const DropdownItem: FC<{ href: string; onMouseDown?: () => void }> = ({
   children,
   href,
   onMouseDown,
