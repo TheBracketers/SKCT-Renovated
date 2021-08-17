@@ -59,6 +59,7 @@ function Menu({onClickHandle}) {
             {items.subMenuItems.map((sub_items) => {
               return (
                 <SecondaryMenuItem
+                  onMouseDown={onClickHandle}
                   key={sub_items.key}
                   href={sub_items.href}
                   name={sub_items.name}
@@ -72,7 +73,14 @@ function Menu({onClickHandle}) {
       
       {/* looping through the secondary menu items array */}
       {SECONDARY_MENU_ITEM.map((items) => {
-        return <SecondaryMenuItem key={items.key} href={items.href} name={items.name}></SecondaryMenuItem>;
+        return (
+          <SecondaryMenuItem
+            onMouseDown={onClickHandle}
+            key={items.key}
+            href={items.href}
+            name={items.name}
+          ></SecondaryMenuItem>
+        );
       })}
     </div>
   );

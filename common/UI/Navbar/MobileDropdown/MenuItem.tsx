@@ -41,7 +41,7 @@ const MenuItem: FC<{ href: String; name: String; onMouseDown?: () => void }> =
           </div>
         </div>
         <AnimateHeight height={isTouched ? "auto" : 0}>
-          <div>{children}</div>
+          <div >{children}</div>
         </AnimateHeight>
       </div>
     );
