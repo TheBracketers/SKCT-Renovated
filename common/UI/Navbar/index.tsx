@@ -108,19 +108,8 @@ function Navbar() {
               </nav>
               {/* *********Primary Navbar********* */}
               <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
-                <div
-                  className={PrimaryAnchorWrapperClasses + 'pl-9'}
-                  onMouseEnter={toggleHoverArea}
-                  onMouseLeave={toggleHoverArea}>
-                  <Link href="/about">
-                    <a className={PrimaryAnchorClasses + 'px-2'}>About</a>
-                  </Link>
-                  <div>
-                    <NavbarHoverArea show={showHoverArea}>
-                      <About />
-                    </NavbarHoverArea>
-                  </div>
-                </div>
+                <About />
+
                 <div className={PrimaryAnchorWrapperClasses}>
                   <Link href="/academics">
                     <a className={PrimaryAnchorClasses}>Academics</a>
