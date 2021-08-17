@@ -13,7 +13,7 @@ import Menu from './MobileDropdown/Menu';
 import About from './DesktopDropdown/Dropdowns/About';
 import SearchBar from './SearchBar';
 import AnimateHeight from 'react-animate-height';
-import { Transition } from 'react-transition-group';
+
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
@@ -47,19 +47,6 @@ function Navbar() {
     setShowHoverArea((prev) => !prev);
   };
 
-  const duration = 300;
-
-  const defaultStyle = {
-    transition: `opacity ${duration}ms ease-in-out`,
-    opacity: 0,
-  };
-
-  const transitionStyles = {
-    entering: { opacity: 1 },
-    entered: { opacity: 1 },
-    exiting: { opacity: 0 },
-    exited: { opacity: 0 },
-  };
   return (
     <div className="mb-2 overflow-auto ipad-pro:overflow-visible">
       <div className="w-full bg-white ">
@@ -129,25 +116,9 @@ function Navbar() {
                     <a className={PrimaryAnchorClasses + 'px-2'}>About</a>
                   </Link>
                   <div>
-                    <Transition
-                      in={showHoverArea}
-                      mountOnEnter
-                      unMountOnExit
-                      timeout={duration}>
-                      {(state) => (
-                        <div
-                          style={{
-                            ...defaultStyle,
-                            ...transitionStyles[state],
-                          }}>
-                          {
-                            <NavbarHoverArea>
-                              <About />
-                            </NavbarHoverArea>
-                          }
-                        </div>
-                      )}
-                    </Transition>
+                    <NavbarHoverArea show={showHoverArea}>
+                      <About />
+                    </NavbarHoverArea>
                   </div>
                 </div>
                 <div className={PrimaryAnchorWrapperClasses}>
