@@ -13,9 +13,11 @@ import Menu from './MobileDropdown/Menu';
 import About from './DesktopDropdown/Dropdowns/About';
 import SearchBar from './SearchBar';
 import AnimateHeight from 'react-animate-height';
+import { Transition } from 'react-transition-group';
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showHoverArea, setShowHoverArea] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -41,6 +43,23 @@ function Navbar() {
     }, 100);
   };
 
+  const toggleHoverArea = () => {
+    setShowHoverArea((prev) => !prev);
+  };
+
+  const duration = 300;
+
+  const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
+  };
+
+  const transitionStyles = {
+    entering: { opacity: 1 },
+    entered: { opacity: 1 },
+    exiting: { opacity: 0 },
+    exited: { opacity: 0 },
+  };
   return (
     <div className="mb-2 overflow-auto ipad-pro:overflow-visible">
       <div className="w-full bg-white ">
@@ -102,13 +121,34 @@ function Navbar() {
               </nav>
               {/* *********Primary Navbar********* */}
               <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
-                <div className={PrimaryAnchorWrapperClasses + 'pl-9'}>
+                <div
+                  className={PrimaryAnchorWrapperClasses + 'pl-9'}
+                  onMouseEnter={toggleHoverArea}
+                  onMouseLeave={toggleHoverArea}>
                   <Link href="/about">
                     <a className={PrimaryAnchorClasses + 'px-2'}>About</a>
                   </Link>
-                  <NavbarHoverArea>
-                    <About />
-                  </NavbarHoverArea>
+                  <div>
+                    <Transition
+                      in={showHoverArea}
+                      mountOnEnter
+                      unMountOnExit
+                      timeout={duration}>
+                      {(state) => (
+                        <div
+                          style={{
+                            ...defaultStyle,
+                            ...transitionStyles[state],
+                          }}>
+                          {
+                            <NavbarHoverArea>
+                              <About />
+                            </NavbarHoverArea>
+                          }
+                        </div>
+                      )}
+                    </Transition>
+                  </div>
                 </div>
                 <div className={PrimaryAnchorWrapperClasses}>
                   <Link href="/academics">
