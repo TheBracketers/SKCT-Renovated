@@ -5,7 +5,7 @@ const NavbarHoverArea: FC<{ show: boolean }> = ({ show, children }) => {
   const duration = 500;
 
   const defaultStyle = {
-    transition: `opacity ${duration}ms ease-in-out`,
+    transition: `opacity ${duration}ms ease-in-out 150ms`,
     opacity: 0,
   };
 
