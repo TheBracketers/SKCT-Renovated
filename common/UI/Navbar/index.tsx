@@ -78,10 +78,13 @@ function Navbar() {
               <Link href='/'>
                 <div className='flex ipad-pro:text-normal justify-between items-center gap-3'>
                   <Logo width={9} />
-                  <div className='flex flex-col '>
+                  <div className='flex flex-col   '>
+                    <p className='text-2xl w-full ipad-pro:hidden block'>
+                      SKCT
+                    </p>
                     {
                       <AnimateHeight height={showSecondaryNav ? 'auto' : 0}>
-                        <p className='text-2xl w-full'>
+                        <p className='text-2xl w-full ipad-pro:block hidden'>
                           <span>Sri Krishna</span>
                           <br />
                           <span className='whitespace-nowrap'>
@@ -92,7 +95,9 @@ function Navbar() {
                     }
                     {
                       <AnimateHeight height={showSecondaryNav ? 0 : 'auto'}>
-                        <p className='text-2xl w-full'>SKCT</p>
+                        <p className='text-2xl w-full ipad-pro:block hidden'>
+                          SKCT
+                        </p>
                       </AnimateHeight>
                     }
                   </div>
