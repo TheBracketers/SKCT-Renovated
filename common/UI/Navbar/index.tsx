@@ -65,6 +65,7 @@ function Navbar() {
           'ipad-pro:-translate-y-8'
         } `}>
         {/* *********Navbar Container********* */}
+        {/* ********* Search Bar ********* */}
         <div className='w-full bg-white '>
           <AnimateHeight height={isSearchBarActive ? 'auto' : 0}>
             <SearchBar
@@ -81,7 +82,7 @@ function Navbar() {
               <Link href='/'>
                 <div className='flex ipad-pro:text-normal justify-between items-center gap-3'>
                   <Logo width={9} />
-                  <div className='flex flex-col   '>
+                  <div className='flex flex-col'>
                     <p className='text-2xl w-full ipad-pro:hidden block'>
                       SKCT
                     </p>
