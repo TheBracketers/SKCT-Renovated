@@ -162,12 +162,12 @@ function Navbar() {
             {/* *********Responsive Navbar********* */}
             <div className='ipad-pro:hidden flex justify-between items-center gap-6 '>
               <button
-                className='px-1 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125'
+                className='p-2 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125'
                 onClick={onSearch}>
                 <FaSearch />
               </button>
               <button
-                className='px-1 transform scale-1 transition duration-200 hover:scale-125  '
+                className='p-2 transform scale-1 transition duration-200 hover:scale-125  '
                 onClick={onExtend}>
                 <FaBars />
               </button>
