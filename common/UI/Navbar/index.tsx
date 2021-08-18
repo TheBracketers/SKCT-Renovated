@@ -25,9 +25,13 @@ function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   let [showSecondaryNav, setShowSecondaryNav] = useState(true);
-
+  let lastScroll = 0;
+  console.count('Rebuild');
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.onscroll = () => {
+      handleScroll();
+    };
+
     if (showSearch) {
       searchRef.current.focus();
     } else {
@@ -40,13 +44,13 @@ function Navbar() {
     } else {
       setShowSecondaryNav(true);
     }
+
+    if (window.pageYOffset > 150 && window.pageXOffset === 150) {
+      setShowSearch(false);
+    }
   };
 
   const onSearch = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
     setShowSearch(true);
     setShowMobileDropdown(false);
   };
@@ -64,8 +68,8 @@ function Navbar() {
   return (
     <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
       <div
-        className={`fixed z-40 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
-          !showSecondaryNav && 'ipad-pro:-translate-y-8'
+        className={`fixed z-20 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
+          !showSecondaryNav && !showSearch ? 'ipad-pro:-translate-y-8' : ''
         } `}>
         {/* *********Navbar Container********* */}
         <div className='w-full bg-white '>
@@ -90,7 +94,8 @@ function Navbar() {
                       SKCT
                     </p>
                     {
-                      <AnimateHeight height={showSecondaryNav ? 'auto' : 0}>
+                      <AnimateHeight
+                        height={showSecondaryNav || showSearch ? 'auto' : 0}>
                         <p className='text-2xl w-full ipad-pro:block hidden'>
                           <span>Sri Krishna</span>
                           <br />
@@ -101,7 +106,8 @@ function Navbar() {
                       </AnimateHeight>
                     }
                     {
-                      <AnimateHeight height={showSecondaryNav ? 0 : 'auto'}>
+                      <AnimateHeight
+                        height={showSecondaryNav || showSearch ? 0 : 'auto'}>
                         <p className='text-2xl w-full ipad-pro:block hidden'>
                           SKCT
                         </p>
@@ -114,7 +120,8 @@ function Navbar() {
             {/* *********Navbar********* */}
             <div className='hidden ipad-pro:flex flex-col '>
               {/* Secondary Navbar*/}
-              <AnimateHeight height={showSecondaryNav ? 'auto' : 0}>
+              <AnimateHeight
+                height={showSecondaryNav || showSearch ? 'auto' : 0}>
                 <nav className='hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase '>
                   <a className='hover:underline  transition duration-300 cursor-pointer'>
                     Students

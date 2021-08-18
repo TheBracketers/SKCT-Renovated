@@ -4,11 +4,11 @@ import Navbar from '../UI/Navbar';
 
 function Layout({ children }) {
   return (
-    <Fragment>
+    <div className='absolute top-0 z-50'>
       <Navbar />
       <main>{children}</main>
       <Footer />
-    </Fragment>
+    </div>
   );
 }
 
