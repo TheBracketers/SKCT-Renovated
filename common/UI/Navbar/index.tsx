@@ -43,6 +43,10 @@ function Navbar() {
   };
 
   const onSearch = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     setShowSearch(true);
     setShowMobileDropdown(false);
   };
@@ -59,7 +63,10 @@ function Navbar() {
 
   return (
     <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
-      <div className='fixed z-40 top-0 w-full shadow-lg  bg-white '>
+      <div
+        className={`fixed z-40 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
+          !showSecondaryNav && '-translate-y-8'
+        } `}>
         {/* *********Navbar Container********* */}
         <div className='w-full bg-white '>
           <AnimateHeight height={showSearch ? 'auto' : 0}>
