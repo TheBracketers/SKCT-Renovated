@@ -23,16 +23,24 @@ import { Admission } from './DesktopDropdown/Dropdowns/Admission';
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-
   const searchRef = useRef<HTMLInputElement>(null);
+  let [showSecondaryNav, setShowSecondaryNav] = useState(true);
 
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
     if (showSearch) {
       searchRef.current.focus();
     } else {
       searchRef.current.blur();
     }
   }, [showSearch]);
+  const handleScroll = (e) => {
+    if (window.pageYOffset > 150) {
+      setShowSecondaryNav(false);
+    } else {
+      setShowSecondaryNav(true);
+    }
+  };
 
   const onSearch = () => {
     setShowSearch(true);
@@ -69,51 +77,64 @@ function Navbar() {
               <Link href='/'>
                 <div className='flex ipad-pro:text-normal justify-between items-center gap-3'>
                   <Logo width={9} />
-                  <p className='text-2xl w-full'>
-                    <span>Sri Krishna</span>
-                    <br />
-                    <span className='whitespace-nowrap'>
-                      College of Technology
-                    </span>
-                  </p>
+                  <div className='flex flex-col '>
+                    {
+                      <AnimateHeight height={showSecondaryNav ? 'auto' : 0}>
+                        <p className='text-2xl w-full'>
+                          <span>Sri Krishna</span>
+                          <br />
+                          <span className='whitespace-nowrap'>
+                            College of Technology
+                          </span>
+                        </p>
+                      </AnimateHeight>
+                    }
+                    {
+                      <AnimateHeight height={showSecondaryNav ? 0 : 'auto'}>
+                        <p className='text-2xl w-full'>SKCT</p>
+                      </AnimateHeight>
+                    }
+                  </div>
                 </div>
               </Link>
             </div>
             {/* *********Navbar********* */}
             <div className='hidden ipad-pro:flex flex-col '>
               {/* Secondary Navbar*/}
-              <nav className='hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase relative '>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  Students
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  Parents
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  Alumni
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  Faculty
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  Staff
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  |
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  Events
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  News
-                </a>
-                <a className='hover:underline  transition duration-300 cursor-pointer'>
-                  Blogs
-                </a>
-                <a className='hover:underline text-blue-400 transition duration-300 cursor-pointer'>
-                  Apply
-                </a>
-              </nav>
+              <AnimateHeight height={showSecondaryNav ? 'auto' : 0}>
+                <nav className='hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase '>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    Students
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    Parents
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    Alumni
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    Faculty
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    Staff
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    |
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    Events
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    News
+                  </a>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
+                    Blogs
+                  </a>
+                  <a className='hover:underline text-blue-400 transition duration-300 cursor-pointer'>
+                    Apply
+                  </a>
+                </nav>
+              </AnimateHeight>
               {/* *********Primary Navbar********* */}
               <nav className='hidden md:flex gap-5 justify-center items-center font-bold text-lg'>
                 <About />
