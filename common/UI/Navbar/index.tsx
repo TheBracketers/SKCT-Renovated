@@ -43,6 +43,10 @@ function Navbar() {
   };
 
   const onSearch = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     setShowSearch(true);
     setShowMobileDropdown(false);
   };
@@ -58,8 +62,11 @@ function Navbar() {
   };
 
   return (
-    <div className="mb-2 ">
-      <div className="fixed z-40 top-0 w-full shadow-lg  bg-white ">
+    <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
+      <div
+        className={`fixed z-40 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
+          !showSecondaryNav && '-translate-y-8'
+        } `}>
         {/* *********Navbar Container********* */}
         <div className="w-full bg-white ">
           <AnimateHeight height={showSearch ? "auto" : 0}>
@@ -72,16 +79,19 @@ function Navbar() {
         </div>
         <div className="relative p-0 ">
           {/* *********Navbar Container********* */}
-          <div className="flex justify-between items-end pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4">
+          <div className='flex justify-between items-center ipad-pro:items-end  pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
             {/* *********Logo********* */}
             <div className="font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300">
               <Link href="/">
                 <div className="flex ipad-pro:text-normal justify-between items-center gap-3">
                   <Logo width={9} />
-                  <div className="flex flex-col ">
+                  <div className='flex flex-col   '>
+                    <p className='text-2xl w-full ipad-pro:hidden block'>
+                      SKCT
+                    </p>
                     {
-                      <AnimateHeight height={showSecondaryNav ? "auto" : 0}>
-                        <p className="text-2xl w-full">
+                      <AnimateHeight height={showSecondaryNav ? 'auto' : 0}>
+                        <p className='text-2xl w-full ipad-pro:block hidden'>
                           <span>Sri Krishna</span>
                           <br />
                           <span className="whitespace-nowrap">
@@ -91,8 +101,10 @@ function Navbar() {
                       </AnimateHeight>
                     }
                     {
-                      <AnimateHeight height={showSecondaryNav ? 0 : "auto"}>
-                        <p className="text-2xl w-full">SKCT</p>
+                      <AnimateHeight height={showSecondaryNav ? 0 : 'auto'}>
+                        <p className='text-2xl w-full ipad-pro:block hidden'>
+                          SKCT
+                        </p>
                       </AnimateHeight>
                     }
                   </div>
@@ -158,15 +170,13 @@ function Navbar() {
             {/* *********Responsive Navbar********* */}
             <div className="ipad-pro:hidden flex justify-between items-center gap-6 ">
               <button
-                className="px-1 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125"
-                onClick={onSearch}
-              >
+                className='p-2 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125'
+                onClick={onSearch}>
                 <FaSearch />
               </button>
               <button
-                className="px-1 transform scale-1 transition duration-200 hover:scale-125  "
-                onClick={onExtend}
-              >
+                className='p-2 transform scale-1 transition duration-200 hover:scale-125  '
+                onClick={onExtend}>
                 <FaBars />
               </button>
             </div>

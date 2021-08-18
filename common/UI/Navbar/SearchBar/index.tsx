@@ -22,7 +22,7 @@ const SearchBar = React.forwardRef<
   const faTimesClassNames = searchText === '' ? 'text-gray-400' : '';
 
   return (
-    <div className=' px-2 ipad-pro:px-14 flex mb-2  items-center gap-6 justify-between w-screen h-full '>
+    <div className='px-2 ipad-pro:px-14 flex mb-2 items-center gap-6 justify-between w-screen h-full  '>
       <input
         ref={ref}
         placeholder='Search...'
@@ -30,12 +30,12 @@ const SearchBar = React.forwardRef<
         onBlur={onBlurHandler}
         value={searchText}
         onChange={handleSearchChange}
-        className='uppercase font-semibold ipad-pro:font-bold ipad-pro:tracking-wide border-b-2flex justify-between w-full placeholder-gray-400 outline-none text-xl ipad-pro:text-3xl border-black p-5 '
+        className='uppercase font-semibold ipad-pro:font-bold ipad-pro:tracking-wide flex justify-between w-full placeholder-gray-400 outline-none text-xl ipad-pro:text-3xl p-5 '
       />
       <div
         onClick={onClose}
         className={
-          'text-xl mr-6 ipad:pro:text-3xl transition duration-300 transform ease-in-out hover:-rotate-90 ' +
+          'text-xl mr-6 ipad:pro:text-3xl transition duration-300 transform ease-in-out  hover:-rotate-90 ' +
           faTimesClassNames
         }>
         <FaTimes />
