@@ -5,7 +5,7 @@ import ScrollToTopButton from './ScrollToTopButton';
 
 function Layout({ children }) {
   return (
-    <div className='absolute top-0 z-50'>
+    <div className='absolute w-full top-0 z-50'>
       <Navbar />
       <main>{children}</main>
       <ScrollToTopButton />
