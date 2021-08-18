@@ -9,7 +9,7 @@ const MenuItem: FC<{ href: String; name: String; onMouseDown?: () => void }> =
 
     return (
       <div
-        className=" pt-4 px-3 pr-4 " 
+        className=" pt-4 px-3 pr-5 " 
         tabIndex={0}
         onBlur={() => {
           setTimeout(() => {
