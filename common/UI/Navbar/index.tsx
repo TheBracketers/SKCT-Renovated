@@ -1,67 +1,58 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { FaBars, FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
+import AnimateHeight from 'react-animate-height';
+import { FaBars, FaSearch } from 'react-icons/fa';
 import { Logo } from '../../icons';
-import {
-  PrimaryAnchorWrapperClasses,
-  PrimaryAnchorClasses,
-} from '../../Styles';
+import { PrimaryAnchorWrapperClasses } from '../../Styles';
 
 import Menu from './MobileDropdown/Menu';
-
 import SearchBar from './SearchBar';
-import AnimateHeight from 'react-animate-height';
 import {
   Academics,
   About,
   Research,
   Outcomes,
+  Admission,
+  CampusLife,
 } from './DesktopDropdown/Dropdowns';
-import { CampusLife } from './DesktopDropdown/Dropdowns/CampusLife';
-import { Admission } from './DesktopDropdown/Dropdowns/Admission';
 
 function Navbar() {
-  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const searchRef = useRef<HTMLInputElement>(null);
-  let [showSecondaryNav, setShowSecondaryNav] = useState(true);
-  let lastScroll = 0;
-  console.count('Rebuild');
+  const [isMobileDropdownActive, setIsMobileDropdownActive] = useState(false);
+  const [isSearchBarActive, setIsSearchBarActive] = useState(false);
+  const [isWindowNotScrolled, setIsWindowNotScrolled] = useState(true);
+  const searchBarInputRef = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     window.onscroll = () => {
       handleScroll();
     };
-
-    if (showSearch) {
-      searchRef.current.focus();
+    if (isSearchBarActive) {
+      searchBarInputRef.current.focus();
     } else {
-      searchRef.current.blur();
+      searchBarInputRef.current.blur();
     }
-  }, [showSearch]);
+  }, [isSearchBarActive]);
+
   const handleScroll = () => {
     if (window.pageYOffset > 150) {
-      setShowSecondaryNav(false);
+      setIsWindowNotScrolled(false);
     } else {
-      setShowSecondaryNav(true);
-    }
-
-    if (window.pageYOffset > 150 && window.pageXOffset === 150) {
-      setShowSearch(false);
+      setIsWindowNotScrolled(true);
     }
   };
 
   const onSearch = () => {
-    setShowSearch(true);
-    setShowMobileDropdown(false);
+    setIsSearchBarActive(true);
+    setIsMobileDropdownActive(false);
   };
-  const onExtend = () => {
-    setShowMobileDropdown((prev) => !prev);
-    setShowSearch(false);
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownActive((prev) => !prev);
+    setIsSearchBarActive(false);
   };
 
   const onLostFocus = () => {
     setTimeout(() => {
-      setShowSearch(false);
+      setIsSearchBarActive(false);
     }, 100);
   };
 
@@ -69,20 +60,21 @@ function Navbar() {
     <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
       <div
         className={`fixed z-20 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
-          !showSecondaryNav && !showSearch ? 'ipad-pro:-translate-y-8' : ''
+          !isWindowNotScrolled &&
+          !isSearchBarActive &&
+          'ipad-pro:-translate-y-8'
         } `}>
         {/* *********Navbar Container********* */}
         <div className='w-full bg-white '>
-          <AnimateHeight height={showSearch ? 'auto' : 0}>
+          <AnimateHeight height={isSearchBarActive ? 'auto' : 0}>
             <SearchBar
-              ref={searchRef}
+              ref={searchBarInputRef}
               onClose={onLostFocus}
               onBlur={onLostFocus}
             />
           </AnimateHeight>
         </div>
         <div className='relative p-0 '>
-          {/* *********Navbar Container********* */}
           <div className='flex justify-between items-center ipad-pro:items-end  pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
             {/* *********Logo********* */}
             <div className='font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300'>
@@ -95,7 +87,9 @@ function Navbar() {
                     </p>
                     {
                       <AnimateHeight
-                        height={showSecondaryNav || showSearch ? 'auto' : 0}>
+                        height={
+                          isWindowNotScrolled || isSearchBarActive ? 'auto' : 0
+                        }>
                         <p className='text-2xl w-full ipad-pro:block hidden'>
                           <span>Sri Krishna</span>
                           <br />
@@ -107,7 +101,9 @@ function Navbar() {
                     }
                     {
                       <AnimateHeight
-                        height={showSecondaryNav || showSearch ? 0 : 'auto'}>
+                        height={
+                          isWindowNotScrolled || isSearchBarActive ? 0 : 'auto'
+                        }>
                         <p className='text-2xl w-full ipad-pro:block hidden'>
                           SKCT
                         </p>
@@ -117,11 +113,11 @@ function Navbar() {
                 </div>
               </Link>
             </div>
-            {/* *********Navbar********* */}
+            {/* *********Desktop Navbar********* */}
             <div className='hidden ipad-pro:flex flex-col '>
-              {/* Secondary Navbar*/}
+              {/* *********Secondary Navbar********* */}
               <AnimateHeight
-                height={showSecondaryNav || showSearch ? 'auto' : 0}>
+                height={isWindowNotScrolled || isSearchBarActive ? 'auto' : 0}>
                 <nav className='hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase '>
                   <a className='hover:underline  transition duration-300 cursor-pointer'>
                     Students
@@ -173,7 +169,7 @@ function Navbar() {
                 </button>
               </nav>
             </div>
-            {/* *********Responsive Navbar********* */}
+            {/* *********Mobile Navbar********* */}
             <div className='ipad-pro:hidden flex justify-between items-center gap-6 '>
               <button
                 className='p-2 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125'
@@ -182,7 +178,7 @@ function Navbar() {
               </button>
               <button
                 className='p-2 transform scale-1 transition duration-200 hover:scale-125  '
-                onClick={onExtend}>
+                onClick={toggleMobileDropdown}>
                 <FaBars />
               </button>
             </div>
@@ -190,11 +186,12 @@ function Navbar() {
         </div>
       </div>
       {/* *********Mobile DropDown********* */}
-
-      <div className='absolute w-full z-10'>
-        <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={610}>
-          <div className='mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold '>
-            <Menu onClickHandle={onExtend} />
+      <div className='absolute w-full z-10 '>
+        <AnimateHeight
+          height={isMobileDropdownActive ? 'auto' : 0}
+          duration={500}>
+          <div className='mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold  '>
+            <Menu onClickHandle={toggleMobileDropdown} />
           </div>
         </AnimateHeight>
       </div>
