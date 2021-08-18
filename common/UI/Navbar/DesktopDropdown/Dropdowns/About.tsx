@@ -24,31 +24,35 @@ function About() {
       onMouseLeave={toggleHoverArea}
       className="group">
       <div className=" pl-9">
-        <NavbarLink href="/about">About</NavbarLink>
+        <NavbarLink href="/about">
+          <a onMouseDown={mouseDownHandler}>About</a>
+        </NavbarLink>
       </div>
       <NavbarHoverArea show={showHoverArea}>
         <DropdownWrapper>
           <DropDownColumn>
-            <DropdownItem onMouseDown={mouseDownHandler} href="">
-              Vision Mission
+            <DropdownItem href="">
+              <a onMouseDown={mouseDownHandler}>Vision Mission</a>
             </DropdownItem>
-            <DropdownItem onMouseDown={mouseDownHandler} href="">
-              Management
+            <DropdownItem href="">
+              <a onMouseDown={mouseDownHandler}>Management</a>
             </DropdownItem>
-            <DropdownItem onMouseDown={mouseDownHandler} href="">
-              Governing Body members
+            <DropdownItem href="">
+              <a onMouseDown={mouseDownHandler}>Governing Body members</a>
             </DropdownItem>
-            <DropdownItem onMouseDown={mouseDownHandler} href="">
-              Approvals Ranking and Accreditation
+            <DropdownItem href="">
+              <a onMouseDown={mouseDownHandler}>
+                Approvals Ranking and Accreditation
+              </a>
             </DropdownItem>
-            <DropdownItem onMouseDown={mouseDownHandler} href="">
-              Eminent Visitors
+            <DropdownItem href="">
+              <a onMouseDown={mouseDownHandler}>Eminent Visitors</a>
             </DropdownItem>
-            <DropdownItem onMouseDown={mouseDownHandler} href="">
-              Media
+            <DropdownItem href="">
+              <a onMouseDown={mouseDownHandler}>Media</a>
             </DropdownItem>
-            <DropdownItem onMouseDown={mouseDownHandler} href="">
-              Daily
+            <DropdownItem href="">
+              <a onMouseDown={mouseDownHandler}>Daily</a>
             </DropdownItem>
           </DropDownColumn>
           <DropDownColumn className="hover:text-red-500">

@@ -27,12 +27,10 @@ function Academics() {
       <NavbarHoverArea show={showHoverArea}>
         <DropdownWrapper>
           <DropDownColumn>
-            <DropdownItem href="">Vision Mission</DropdownItem>
-            <DropdownItem href="">Management</DropdownItem>
-            <DropdownItem href="">Governing Body members</DropdownItem>
-            <DropdownItem href="">
-              Approvals Ranking and Accreditation
-            </DropdownItem>
+            <DropdownItem href="">Something Different</DropdownItem>
+            <DropdownItem href="">Something Different</DropdownItem>
+            <DropdownItem href="">Something Different</DropdownItem>
+            <DropdownItem href="">Something Different</DropdownItem>
             <DropdownItem href="">Eminent Visitors</DropdownItem>
             <DropdownItem href="">Media</DropdownItem>
             <DropdownItem href="">Daily</DropdownItem>
