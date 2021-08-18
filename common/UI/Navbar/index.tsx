@@ -34,7 +34,7 @@ function Navbar() {
       searchRef.current.blur();
     }
   }, [showSearch]);
-  const handleScroll = (e) => {
+  const handleScroll = () => {
     if (window.pageYOffset > 150) {
       setShowSecondaryNav(false);
     } else {
@@ -65,7 +65,7 @@ function Navbar() {
     <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
       <div
         className={`fixed z-40 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
-          !showSecondaryNav && '-translate-y-8'
+          !showSecondaryNav && 'ipad-pro:-translate-y-8'
         } `}>
         {/* *********Navbar Container********* */}
         <div className='w-full bg-white '>

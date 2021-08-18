@@ -12,7 +12,7 @@ const SearchBar = React.forwardRef<
     setSearchText(e.target.value);
   };
 
-  const onBlurHandler = (e) => {
+  const onBlurHandler = () => {
     onBlur();
     setTimeout(() => {
       setSearchText('');
