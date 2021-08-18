@@ -63,18 +63,23 @@ function Navbar() {
           </AnimateHeight>
         </div>
         <div className='relative p-0 '>
-          <div className='flex justify-between items-center px-5 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
+          <div className='flex justify-between items-center pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
             {/* *********Logo********* */}
             <div className='font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300'>
               <Link href='/'>
                 <div className='flex ipad-pro:text-normal justify-between items-center gap-3'>
                   <Logo width={9} />
-                  <h2 className='text-2xl'>SKCT</h2>
+                  <p className='text-2xl w-full'>
+                    <span>Sri Krishna</span>
+                    <br />
+                    <span className='whitespace-nowrap'>
+                      College of Technology
+                    </span>
+                  </p>
                 </div>
               </Link>
             </div>
             {/* *********Navbar********* */}
-
             <div className='hidden ipad-pro:flex flex-col '>
               {/* Secondary Navbar*/}
               <nav className='hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase relative '>
@@ -110,7 +115,7 @@ function Navbar() {
                 </a>
               </nav>
               {/* *********Primary Navbar********* */}
-              <nav className='hidden md:flex gap-8 justify-center items-center font-bold text-lg'>
+              <nav className='hidden md:flex gap-5 justify-center items-center font-bold text-lg'>
                 <About />
                 <Academics />
                 <Research />
