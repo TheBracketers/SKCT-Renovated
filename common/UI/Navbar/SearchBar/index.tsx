@@ -12,17 +12,17 @@ const SearchBar = React.forwardRef<
     setSearchText(e.target.value);
   };
 
-  const onBlurHandler = (e) => {
+  const onBlurHandler = () => {
     onBlur();
     setTimeout(() => {
       setSearchText('');
     }, 400);
   };
 
-  const faTimesClassNames = searchText === '' ? 'text-gray-400' : '';
+  const faTimesClassNames = searchText === '' && 'text-gray-400';
 
   return (
-    <div className='px-2 ipad-pro:px-14 flex mb-2 items-center gap-6 justify-between w-screen h-full  '>
+    <div className='px-2 ipad-pro:px-14 flex mb-1 items-center gap-6 justify-between w-screen h-full  '>
       <input
         ref={ref}
         placeholder='Search...'

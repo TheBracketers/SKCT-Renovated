@@ -45,7 +45,7 @@ const SECONDARY_MENU_ITEM = [
 
 function Menu({ onClickHandle }) {
   return (
-    <div className="space-y divide-y px-2 ipad-pro:px-8  ">
+    <div className='space-y divide-y px-2 ipad-pro:px-8 w-full '>
       {/* looping through Menu Item array */}
       {MENU_ITEMS.map((items) => {
         return (

@@ -1,96 +1,102 @@
-import React, { useEffect, useState, useRef } from "react";
-import { FaBars, FaSearch } from "react-icons/fa";
-import Link from "next/link";
-import { Logo } from "../../icons";
-import {
-  PrimaryAnchorWrapperClasses,
-  PrimaryAnchorClasses,
-} from "../../Styles";
+import React, { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
+import AnimateHeight from 'react-animate-height';
+import { FaBars, FaSearch } from 'react-icons/fa';
+import { Logo } from '../../icons';
+import { PrimaryAnchorWrapperClasses } from '../../Styles';
 
-import Menu from "./MobileDropdown/Menu";
-
-import SearchBar from "./SearchBar";
-import AnimateHeight from "react-animate-height";
+import Menu from './MobileDropdown/Menu';
+import SearchBar from './SearchBar';
 import {
   Academics,
   About,
   Research,
   Outcomes,
-} from "./DesktopDropdown/Dropdowns";
-import { CampusLife } from "./DesktopDropdown/Dropdowns/CampusLife";
-import { Admission } from "./DesktopDropdown/Dropdowns/Admission";
+  Admission,
+  CampusLife,
+} from './DesktopDropdown/Dropdowns';
+import { FC } from 'react';
 
-function Navbar() {
-  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const searchRef = useRef<HTMLInputElement>(null);
-  let [showSecondaryNav, setShowSecondaryNav] = useState(true);
+const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
+  onHideContent,
+}) => {
+  const [isMobileDropdownActive, setIsMobileDropdownActive] = useState(false);
+  const [isSearchBarActive, setIsSearchBarActive] = useState(false);
+  const [isWindowNotScrolled, setIsWindowNotScrolled] = useState(true);
+  const searchBarInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    if (showSearch) {
-      searchRef.current.focus();
+    window.onscroll = () => {
+      handleScroll();
+    };
+    if (isSearchBarActive) {
+      searchBarInputRef.current.focus();
     } else {
-      searchRef.current.blur();
+      searchBarInputRef.current.blur();
     }
-  }, [showSearch]);
-  const handleScroll = (e) => {
+  }, [isSearchBarActive]);
+
+  const handleScroll = () => {
     if (window.pageYOffset > 150) {
-      setShowSecondaryNav(false);
+      setIsWindowNotScrolled(false);
     } else {
-      setShowSecondaryNav(true);
+      setIsWindowNotScrolled(true);
     }
   };
 
   const onSearch = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-    setShowSearch(true);
-    setShowMobileDropdown(false);
+    setIsSearchBarActive(true);
+    setIsMobileDropdownActive(false);
+    onHideContent(true);
   };
-  const onExtend = () => {
-    setShowMobileDropdown((prev) => !prev);
-    setShowSearch(false);
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownActive((prev) => !prev);
+    onHideContent(isMobileDropdownActive);
+    setIsSearchBarActive(false);
   };
 
   const onLostFocus = () => {
+    onHideContent(true);
     setTimeout(() => {
-      setShowSearch(false);
+      setIsSearchBarActive(false);
     }, 100);
   };
 
   return (
     <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
       <div
-        className={`fixed z-40 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
-          !showSecondaryNav && '-translate-y-8'
+        className={`fixed z-20 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
+          !isWindowNotScrolled &&
+          !isSearchBarActive &&
+          'ipad-pro:-translate-y-8'
         } `}>
         {/* *********Navbar Container********* */}
-        <div className="w-full bg-white ">
-          <AnimateHeight height={showSearch ? "auto" : 0}>
+        {/* ********* Search Bar ********* */}
+        <div className='w-full bg-white '>
+          <AnimateHeight height={isSearchBarActive ? 'auto' : 0}>
             <SearchBar
-              ref={searchRef}
+              ref={searchBarInputRef}
               onClose={onLostFocus}
               onBlur={onLostFocus}
             />
           </AnimateHeight>
         </div>
-        <div className="relative p-0 ">
-          {/* *********Navbar Container********* */}
+        <div className='relative p-0 '>
           <div className='flex justify-between items-center ipad-pro:items-end  pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
             {/* *********Logo********* */}
             <div className="font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300">
               <Link href="/">
                 <div className="flex ipad-pro:text-normal justify-between items-center gap-3">
                   <Logo width={9} />
-                  <div className='flex flex-col   '>
+                  <div className='flex flex-col'>
                     <p className='text-2xl w-full ipad-pro:hidden block'>
                       SKCT
                     </p>
                     {
-                      <AnimateHeight height={showSecondaryNav ? 'auto' : 0}>
+                      <AnimateHeight
+                        height={
+                          isWindowNotScrolled || isSearchBarActive ? 'auto' : 0
+                        }>
                         <p className='text-2xl w-full ipad-pro:block hidden'>
                           <span>Sri Krishna</span>
                           <br />
@@ -101,7 +107,10 @@ function Navbar() {
                       </AnimateHeight>
                     }
                     {
-                      <AnimateHeight height={showSecondaryNav ? 0 : 'auto'}>
+                      <AnimateHeight
+                        height={
+                          isWindowNotScrolled || isSearchBarActive ? 0 : 'auto'
+                        }>
                         <p className='text-2xl w-full ipad-pro:block hidden'>
                           SKCT
                         </p>
@@ -111,12 +120,13 @@ function Navbar() {
                 </div>
               </Link>
             </div>
-            {/* *********Navbar********* */}
-            <div className="hidden ipad-pro:flex flex-col ">
-              {/* Secondary Navbar*/}
-              <AnimateHeight height={showSecondaryNav ? "auto" : 0}>
-                <nav className="hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase ">
-                  <a className="hover:underline  transition duration-300 cursor-pointer">
+            {/* *********Desktop Navbar********* */}
+            <div className='hidden ipad-pro:flex flex-col '>
+              {/* *********Secondary Navbar********* */}
+              <AnimateHeight
+                height={isWindowNotScrolled || isSearchBarActive ? 'auto' : 0}>
+                <nav className='hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase '>
+                  <a className='hover:underline  transition duration-300 cursor-pointer'>
                     Students
                   </a>
                   <a className="hover:underline  transition duration-300 cursor-pointer">
@@ -167,8 +177,8 @@ function Navbar() {
                 </button>
               </nav>
             </div>
-            {/* *********Responsive Navbar********* */}
-            <div className="ipad-pro:hidden flex justify-between items-center gap-6 ">
+            {/* *********Mobile Navbar********* */}
+            <div className='ipad-pro:hidden flex justify-between items-center gap-6 '>
               <button
                 className='p-2 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125'
                 onClick={onSearch}>
@@ -176,7 +186,7 @@ function Navbar() {
               </button>
               <button
                 className='p-2 transform scale-1 transition duration-200 hover:scale-125  '
-                onClick={onExtend}>
+                onClick={toggleMobileDropdown}>
                 <FaBars />
               </button>
             </div>
@@ -184,16 +194,17 @@ function Navbar() {
         </div>
       </div>
       {/* *********Mobile DropDown********* */}
-
-      <div className="absolute w-full z-10 overscroll-none bg-red-50 bg-opacity-30 ">
-        <AnimateHeight height={showMobileDropdown ? "auto" : 0} duration={610}>
-          <div className="mt-20 md:mt-24  ipad-pro:hidden  bg-white text-black font-bold ">
-            <Menu onClickHandle={onExtend} />
+      <div className='absolute w-full z-10 '>
+        <AnimateHeight
+          height={isMobileDropdownActive ? 'auto' : 0}
+          duration={500}>
+          <div className='mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold  '>
+            <Menu onClickHandle={toggleMobileDropdown} />
           </div>
         </AnimateHeight>
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
