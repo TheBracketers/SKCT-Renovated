@@ -15,8 +15,9 @@ import {
   Admission,
   CampusLife,
 } from './DesktopDropdown/Dropdowns';
+import { FC } from 'react';
 
-function Navbar() {
+const Navbar: FC<{ onHideContent: () => void }> = ({ onHideContent }) => {
   const [isMobileDropdownActive, setIsMobileDropdownActive] = useState(false);
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   const [isWindowNotScrolled, setIsWindowNotScrolled] = useState(true);
@@ -47,6 +48,7 @@ function Navbar() {
   };
   const toggleMobileDropdown = () => {
     setIsMobileDropdownActive((prev) => !prev);
+    onHideContent();
     setIsSearchBarActive(false);
   };
 
@@ -198,6 +200,6 @@ function Navbar() {
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
