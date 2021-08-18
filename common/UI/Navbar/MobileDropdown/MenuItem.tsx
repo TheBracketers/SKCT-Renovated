@@ -9,7 +9,7 @@ const MenuItem: FC<{ href: String; name: String; onMouseDown?: () => void }> =
 
     return (
       <div
-        className=" pt-4 px-3  "
+        className=" pt-4 px-3 pr-4 " 
         tabIndex={0}
         onBlur={() => {
           setTimeout(() => {
@@ -33,15 +33,15 @@ const MenuItem: FC<{ href: String; name: String; onMouseDown?: () => void }> =
           <div
             className={
               !isTouched
-                ? "transform transition duration-300 -rotate-0"
-                : "transform transition duration-300 rotate-180"
-            }
+                ? "transform transition duration-300 -rotate-0 "
+                : "transform transition duration-300 rotate-180 " 
+            }  
           >
             {name != "Admission" && <BsChevronDown />}
           </div>
         </div>
         <AnimateHeight height={isTouched ? "auto" : 0}>
-          <div >{children}</div>
+          <div>{children}</div>
         </AnimateHeight>
       </div>
     );
