@@ -23,7 +23,7 @@ import { Admission } from './DesktopDropdown/Dropdowns/Admission';
 function Navbar() {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [showHoverArea, setShowHoverArea] = useState(false);
+
   const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
