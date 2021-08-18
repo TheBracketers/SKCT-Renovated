@@ -17,7 +17,9 @@ import {
 } from './DesktopDropdown/Dropdowns';
 import { FC } from 'react';
 
-const Navbar: FC<{ onHideContent: () => void }> = ({ onHideContent }) => {
+const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
+  onHideContent,
+}) => {
   const [isMobileDropdownActive, setIsMobileDropdownActive] = useState(false);
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   const [isWindowNotScrolled, setIsWindowNotScrolled] = useState(true);
@@ -45,14 +47,16 @@ const Navbar: FC<{ onHideContent: () => void }> = ({ onHideContent }) => {
   const onSearch = () => {
     setIsSearchBarActive(true);
     setIsMobileDropdownActive(false);
+    onHideContent(true);
   };
   const toggleMobileDropdown = () => {
     setIsMobileDropdownActive((prev) => !prev);
-    onHideContent();
+    onHideContent(isMobileDropdownActive);
     setIsSearchBarActive(false);
   };
 
   const onLostFocus = () => {
+    onHideContent(true);
     setTimeout(() => {
       setIsSearchBarActive(false);
     }, 100);

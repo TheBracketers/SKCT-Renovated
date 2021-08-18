@@ -6,8 +6,8 @@ import ScrollToTopButton from './ScrollToTopButton';
 function Layout({ children }) {
   const [isMobileDropDownClosed, setIsMobileDropDownClosed] = useState(true);
 
-  const onMobileDropDownActiveHandler = () => {
-    setIsMobileDropDownClosed((prev) => !prev);
+  const onMobileDropDownActiveHandler = (show: boolean) => {
+    setIsMobileDropDownClosed(show);
   };
 
   return (
