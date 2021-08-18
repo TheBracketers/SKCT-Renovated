@@ -3,9 +3,11 @@
 This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna College of Technology](http://www.skct.edu.in/) webpage
 
 - [**SKCT-Renovated**](#skct-renovated)
-  - [**Dependencies & Frameworks**](#dependencies--frameworks)
-  - [**Languages**](#languages)
-  - [**Work Log 👷‍♂️**](#work-log-️)
+    - [**Dependencies & Frameworks**](#dependencies--frameworks)
+    - [**The Team**](#the-team)
+    - [**Contributors**](#contributors)
+    - [**Languages**](#languages)
+    - [**Work Log 👷‍♂️**](#work-log-️)
 
 ### **Dependencies & Frameworks**
 
@@ -14,6 +16,16 @@ This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna Coll
 - **[TailwindCSS](https://tailwindcss.com/)** - A utility-first CSS framework
 - **[React Icons](https://react-icons.github.io/react-icons/)** - A Library for integrating popular icons into React projects
 - [**React Animate Height**]() - Lightweight React component for animating height using CSS transitions
+
+### **The Team**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**The Bracketers**](https://github.com/TheBracketers)
+
+### **Contributors**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/TheBracketers/SKCT-Renovated/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=TheBracketers/SKCT-Renovated" />
+</a>
 
 ### **Languages**
 
@@ -34,12 +46,12 @@ This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna Coll
     - [ ] **_Admissions Page_**
     - [ ] **_R&D Page_**
   - [ ] **Secondary Navbar**
-    - [ ] **Students**
-    - [ ] **Parents**
-    - [ ] **Alumni**
-    - [ ] **Faculty**
-    - [ ] **Staff**
-    - [ ] **Events**
-    - [ ] **News**
-    - [ ] **Blogs**
-    - [ ] **Apply**
+    - [ ] **_Students_**
+    - [ ] **_Parents_**
+    - [ ] **_Alumni_**
+    - [ ] **_Faculty_**
+    - [ ] **_Staff_**
+    - [ ] **_Events_**
+    - [ ] **_News_**
+    - [ ] **_Blogs_**
+    - [ ] **_Apply_**
