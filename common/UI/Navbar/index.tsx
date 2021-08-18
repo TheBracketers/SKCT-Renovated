@@ -71,7 +71,8 @@ function Navbar() {
           </AnimateHeight>
         </div>
         <div className='relative p-0 '>
-          <div className='flex justify-between items-center pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
+          {/* *********Navbar Container********* */}
+          <div className='flex justify-between items-end pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
             {/* *********Logo********* */}
             <div className='font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300'>
               <Link href='/'>
