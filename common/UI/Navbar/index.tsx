@@ -50,73 +50,73 @@ function Navbar() {
   };
 
   return (
-    <div className="mb-2 overflow-auto ipad-pro:overflow-visible">
-      <div className="w-full bg-white ">
-        <AnimateHeight height={showSearch ? 'auto' : 0}>
-          <SearchBar
-            ref={searchRef}
-            onClose={onLostFocus}
-            onBlur={onLostFocus}
-          />
-        </AnimateHeight>
-      </div>
-      <div className="fixed z-40 w-full shadow-lg  bg-white ">
+    <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
+      <div className='fixed z-40 top-0 w-full shadow-lg  bg-white '>
         {/* *********Navbar Container********* */}
-        <div className="relative p-0">
-          <div className="flex justify-between items-center px-5 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4">
+        <div className='w-full bg-white '>
+          <AnimateHeight height={showSearch ? 'auto' : 0}>
+            <SearchBar
+              ref={searchRef}
+              onClose={onLostFocus}
+              onBlur={onLostFocus}
+            />
+          </AnimateHeight>
+        </div>
+        <div className='relative p-0 '>
+          <div className='flex justify-between items-center px-5 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
             {/* *********Logo********* */}
-            <div className="font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300">
-              <Link href="/">
-                <div className="flex ipad-pro:text-normal justify-between items-center gap-3">
+            <div className='font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300'>
+              <Link href='/'>
+                <div className='flex ipad-pro:text-normal justify-between items-center gap-3'>
                   <Logo width={9} />
-                  <h2 className="text-2xl">SKCT</h2>
+                  <h2 className='text-2xl'>SKCT</h2>
                 </div>
               </Link>
             </div>
             {/* *********Navbar********* */}
-            <div className="hidden ipad-pro:flex flex-col ">
+
+            <div className='hidden ipad-pro:flex flex-col '>
               {/* Secondary Navbar*/}
-              <nav className="hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase ">
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+              <nav className='hidden md:flex gap-5 justify-end text-gray-500 font-bold text-xs uppercase relative '>
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   Students
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   Parents
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   Alumni
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   Faculty
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   Staff
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   |
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   Events
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   News
                 </a>
-                <a className="hover:underline  transition duration-300 cursor-pointer">
+                <a className='hover:underline  transition duration-300 cursor-pointer'>
                   Blogs
                 </a>
-                <a className="hover:underline text-blue-400 transition duration-300 cursor-pointer">
+                <a className='hover:underline text-blue-400 transition duration-300 cursor-pointer'>
                   Apply
                 </a>
               </nav>
               {/* *********Primary Navbar********* */}
-              <nav className="hidden md:flex gap-8 justify-center items-center font-bold text-lg">
+              <nav className='hidden md:flex gap-8 justify-center items-center font-bold text-lg'>
                 <About />
                 <Academics />
                 <Research />
                 <CampusLife />
                 <Outcomes />
                 <Admission />
-
                 <button
                   onClick={onSearch}
                   className={
@@ -128,14 +128,14 @@ function Navbar() {
               </nav>
             </div>
             {/* *********Responsive Navbar********* */}
-            <div className="ipad-pro:hidden flex justify-between items-center gap-6 ">
+            <div className='ipad-pro:hidden flex justify-between items-center gap-6 '>
               <button
-                className="px-1 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125"
+                className='px-1 transform rotate-0 scale-1 transition duration-200 hover:-rotate-12 hover:scale-125'
                 onClick={onSearch}>
                 <FaSearch />
               </button>
               <button
-                className="px-1 transform scale-1 transition duration-200 hover:scale-125  "
+                className='px-1 transform scale-1 transition duration-200 hover:scale-125  '
                 onClick={onExtend}>
                 <FaBars />
               </button>
@@ -145,9 +145,9 @@ function Navbar() {
       </div>
       {/* *********Mobile DropDown********* */}
 
-      <div className="absolute w-full z-10">
+      <div className='absolute w-full z-10'>
         <AnimateHeight height={showMobileDropdown ? 'auto' : 0} duration={610}>
-          <div className="mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold ">
+          <div className='mt-20 md:mt-24  ipad-pro:hidden h-screen bg-white text-black font-bold '>
             <Menu onClickHandle={onExtend} />
           </div>
         </AnimateHeight>
