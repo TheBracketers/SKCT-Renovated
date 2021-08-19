@@ -92,9 +92,14 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
           </AnimateHeight>
         </div>
         <div className='relative p-0 '>
-          <div className='flex justify-between items-center ipad-pro:items-end  pr-5 pl-2 py-3  md:py-4 ipad-pro:px-12 ipad-pro:py-4'>
+          <div className='flex justify-between items-center ipad-pro:items-end  pr-5 pl-2 py-1  ipad-pro:px-12 ipad-pro:pb-4'>
             {/* *********Logo********* */}
-            <div className='font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300'>
+            <div
+              className={`font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transform transition duration-300 ${
+                !isWindowNotScrolled &&
+                !isSearchBarActive &&
+                'ipad-pro:translate-y-3'
+              }`}>
               <Link href='/'>
                 <div className='flex ipad-pro:text-normal justify-between items-center gap-3 ipad-pro:pt-6'>
                   <div className='flex flex-col relative'>
