@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import AnimateHeight from 'react-animate-height';
 import { FaBars, FaSearch } from 'react-icons/fa';
-import { Logo } from '../../icons';
+import { SKLogo, SKCTLogo } from '../../icons';
 import { PrimaryAnchorWrapperClasses } from '../../Styles';
 
 import Menu from './MobileDropdown/Menu';
@@ -23,6 +23,7 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
   const [isMobileDropdownActive, setIsMobileDropdownActive] = useState(false);
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   const [isWindowNotScrolled, setIsWindowNotScrolled] = useState(true);
+  const [iterateLogo, setIterateLogo] = useState(false);
   const searchBarInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -34,6 +35,14 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
     } else {
       searchBarInputRef.current.blur();
     }
+
+    const timer = setInterval(() => {
+      setIterateLogo((prev) => !prev);
+    }, 5000);
+
+    return () => {
+      clearInterval(timer);
+    };
   }, [isSearchBarActive]);
 
   const handleScroll = () => {
@@ -86,8 +95,15 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
             {/* *********Logo********* */}
             <div className='font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300'>
               <Link href='/'>
-                <div className='flex ipad-pro:text-normal justify-between items-center gap-3'>
-                  <Logo width={9} />
+                <div className='flex ipad-pro:text-normal justify-between items-center gap-3 ipad-pro:pt-6'>
+                  <div className='flex flex-col'>
+                    <AnimateHeight height={iterateLogo ? 'auto' : 0}>
+                      <SKCTLogo width={20} />
+                    </AnimateHeight>
+                    <AnimateHeight height={!iterateLogo ? 'auto' : 0}>
+                      <SKLogo width={20} />
+                    </AnimateHeight>
+                  </div>
                   <div className='flex flex-col'>
                     <p className='text-2xl w-full ipad-pro:hidden block'>
                       SKCT
