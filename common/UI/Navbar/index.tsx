@@ -14,6 +14,7 @@ import {
   Outcomes,
   Admission,
   CampusLife,
+  Home,
 } from './DesktopDropdown/Dropdowns';
 import { FC } from 'react';
 
@@ -72,7 +73,7 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
   };
 
   return (
-    <div className='mb-2 overflow-auto ipad-pro:overflow-visible'>
+    <div className='mb-2 overflow-auto ipad-pro:overflow-visible '>
       <div
         className={`fixed z-20 top-0  w-full shadow-lg  bg-white transform transition-all duration-200 ${
           !isWindowNotScrolled &&
@@ -91,18 +92,22 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
           </AnimateHeight>
         </div>
         <div className='relative p-0 '>
-          <div className='flex justify-between items-center ipad-pro:items-end  pr-5 pl-2 py-3  md:py-4 ipad-pro:px-16 ipad-pro:py-4'>
+          <div className='flex justify-between items-center ipad-pro:items-end  pr-5 pl-2 py-3  md:py-4 ipad-pro:px-12 ipad-pro:py-4'>
             {/* *********Logo********* */}
             <div className='font-semibold lg:font-bold  cursor-pointer lg:hover:text-blue-400 transition duration-300'>
               <Link href='/'>
                 <div className='flex ipad-pro:text-normal justify-between items-center gap-3 ipad-pro:pt-6'>
-                  <div className='flex flex-col'>
-                    <AnimateHeight height={iterateLogo ? 'auto' : 0}>
-                      <SKCTLogo width={20} />
-                    </AnimateHeight>
-                    <AnimateHeight height={!iterateLogo ? 'auto' : 0}>
-                      <SKLogo width={20} />
-                    </AnimateHeight>
+                  <div className='flex flex-col relative'>
+                    <div className='relative top-0 left-0 w-full min-h-full px-8 py-7 '>
+                      <div className='absolute top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2  '>
+                        <AnimateHeight height={iterateLogo ? 'auto' : 0}>
+                          <SKCTLogo width={20} />
+                        </AnimateHeight>
+                        <AnimateHeight height={!iterateLogo ? 'auto' : 0}>
+                          <SKLogo width={20} />
+                        </AnimateHeight>
+                      </div>
+                    </div>
                   </div>
                   <div className='flex flex-col'>
                     <p className='text-2xl w-full ipad-pro:hidden block'>
@@ -175,7 +180,8 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
                 </nav>
               </AnimateHeight>
               {/* *********Primary Navbar********* */}
-              <nav className='hidden md:flex gap-5 justify-center items-center font-bold text-lg'>
+              <nav className='hidden md:flex gap-3 justify-center items-center font-bold text-lg'>
+                <Home />
                 <About />
                 <Academics />
                 <Research />

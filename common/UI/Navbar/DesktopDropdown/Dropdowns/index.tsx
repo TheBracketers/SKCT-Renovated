@@ -4,3 +4,4 @@ export { Academics } from './Academics';
 export { Research } from './Research';
 export { Outcomes } from './Outcomes';
 export { Admission } from './Admission';
+export { Home } from './Home';

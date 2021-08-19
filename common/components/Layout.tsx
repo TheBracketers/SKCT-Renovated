@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import Footer from '../UI/footer';
 import Navbar from '../UI/Navbar';
-import ScrollToTopButton from './ScrollToTopButton';
+import ScrollToTopButton from '../UI/ScrollToTopButton';
 
 function Layout({ children }) {
   const [isMobileDropDownClosed, setIsMobileDropDownClosed] = useState(true);
