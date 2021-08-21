@@ -7,7 +7,7 @@
 }
 .fade-in-out-exit {
   opacity: 1;
-  transition: opacity 300ms ease-in 50ms;
+  transition: opacity 700ms ease-in 50ms;
 }
 .fade-in-out-exit-active {
   opacity: 0;
