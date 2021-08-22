@@ -105,10 +105,14 @@ const Navbar: FC<{ onHideContent: (show: boolean) => void }> = ({
                   <div className='flex flex-col relative'>
                     <div className='relative top-0 left-0 w-full min-h-full px-8 py-7 '>
                       <div className='absolute top-1/2 left-1/2  transform -translate-x-1/2 -translate-y-1/2  '>
-                        <AnimateHeight height={iterateLogo ? 'auto' : 0}>
+                        <AnimateHeight
+                          height={iterateLogo ? 'auto' : 0}
+                          duration={300}>
                           <SKCTLogo width={20} />
                         </AnimateHeight>
-                        <AnimateHeight height={!iterateLogo ? 'auto' : 0}>
+                        <AnimateHeight
+                          height={!iterateLogo ? 'auto' : 0}
+                          duration={300}>
                           <SKLogo width={20} />
                         </AnimateHeight>
                       </div>
