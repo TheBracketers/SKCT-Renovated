@@ -21,12 +21,6 @@ This is, **Modernized**, **Slimest** and **Elegant** Clone for [Sri Krishna Coll
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**The Bracketers**](https://github.com/TheBracketers)
 
-### **Contributors**
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/TheBracketers/SKCT-Renovated/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=TheBracketers/SKCT-Renovated" />
-</a>
-
 ### **Languages**
 
 - [**Typescript**](https://www.typescriptlang.org/)
